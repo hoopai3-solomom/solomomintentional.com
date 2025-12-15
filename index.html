@@ -385,6 +385,125 @@
             font-weight: 700;
         }
 
+        /* Session Highlight Card */
+        .session-highlight {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 768px) {
+            .session-highlight {
+                grid-column: span 1;
+            }
+        }
+
+        /* Agenda Card */
+        .agenda-card {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 768px) {
+            .agenda-card {
+                grid-column: span 1;
+            }
+        }
+
+        .agenda-item {
+            display: flex;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--color-cream);
+        }
+
+        .agenda-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .agenda-time {
+            min-width: 70px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--color-accent);
+            background: var(--color-blush);
+            padding: 8px 12px;
+            border-radius: 8px;
+            text-align: center;
+            height: fit-content;
+        }
+
+        .agenda-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: 8px;
+        }
+
+        .agenda-content p {
+            font-size: 14px;
+            color: var(--color-text-light);
+            margin: 0;
+        }
+
+        .agenda-topics {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .agenda-topics li {
+            font-size: 13px;
+            color: var(--color-text);
+            background: var(--color-sage-light);
+            padding: 6px 14px;
+            border-radius: 20px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--color-text) 0%, #2a2a2a 100%);
+            color: white;
+            border-radius: var(--radius);
+            padding: 60px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 32px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 48px;
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--color-text);
+            background: white;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+
         /* Positioning Card - Full Width */
         .positioning-card {
             background: linear-gradient(135deg, var(--color-text) 0%, #2a2a2a 100%);
@@ -491,6 +610,21 @@
             margin-bottom: 12px;
         }
 
+        .legal-disclaimer {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--color-blush);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .legal-disclaimer p {
+            font-size: 12px;
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .cards-grid {
@@ -537,170 +671,107 @@
 
     <section class="hero">
         <div class="hero-content">
-            <p class="hero-label">Your Complete Resource</p>
-            <h1>The Modern Solo Mom by Choice Guide</h1>
-            <p class="hero-subtitle">Egg Freezing, IVF, Donor Sperm & PGT-A</p>
+            <p class="hero-label">Your Fertility Journey, Simplified</p>
+            <h1>Solo Mom by Choice — Intentional by Design</h1>
+            <p class="hero-subtitle">Clarity and support for professional women navigating solo motherhood.</p>
         </div>
     </section>
 
     <main class="container">
         <div class="cards-grid">
-            <!-- Egg Freezing Card -->
-            <div class="card">
-                <div class="card-icon blush">🥚</div>
-                <h2>Egg Freezing</h2>
-                <div class="card-item">
-                    <span class="card-item-label">Cost (No Insurance)</span>
-                    <span class="card-item-value">$10,000–$20,000</span>
-                </div>
-                <div class="card-item">
-                    <span class="card-item-label">Medications</span>
-                    <span class="card-item-value">$3,000–$6,000</span>
-                </div>
-                <div class="card-item">
-                    <span class="card-item-label">Storage (Annual)</span>
-                    <span class="card-item-value">$500–$1,000</span>
-                </div>
+            <!-- Session Overview Card -->
+            <div class="card session-highlight">
+                <div class="card-icon blush">🎯</div>
+                <h2>30-Minute Private Session</h2>
+                <p>A 30-minute private session where I guide women through the donor conception and single-motherhood-by-choice decision-making process with real-life insight, emotional support, and clear next steps.</p>
+                <p style="margin-top: 16px;">Designed specifically for professional women who are considering becoming Solo Moms by Choice or who have already begun the journey — but feel overwhelmed, unsure, or alone.</p>
                 
-                <p class="card-subheading">Average Eggs Retrieved</p>
-                <div class="card-item">
-                    <span class="card-item-label">Age 30–34</span>
-                    <span class="card-item-value">15–20 eggs</span>
-                </div>
-                <div class="card-item">
-                    <span class="card-item-label">Age 35–37</span>
-                    <span class="card-item-value">10–15 eggs</span>
-                </div>
-                <div class="card-item">
-                    <span class="card-item-label">Age 38–40</span>
-                    <span class="card-item-value">6–12 eggs</span>
-                </div>
+                <p class="card-subheading">This Session Gives You</p>
+                <ul class="benefits-list">
+                    <li>A safe, confidential space to ask anything about becoming a Solo Mom by Choice</li>
+                    <li>Clarity on egg freezing, IVF, PGT-A, and transfers</li>
+                    <li>Support navigating the emotional and logistical parts of the journey</li>
+                    <li>Guidance on balancing single motherhood and a demanding career</li>
+                </ul>
                 
                 <div class="card-note">
-                    <strong>Rule of Thumb:</strong> ~10 mature eggs ≈ 1 potential baby
+                    <strong>📋 Bonus:</strong> The Solo Mom by Choice Cheat Sheet (PDF takeaway)
                 </div>
             </div>
 
-            <!-- IVF Card -->
+            <!-- Who This Is For Card -->
             <div class="card">
-                <div class="card-icon sage">🧬</div>
-                <h2>IVF (In Vitro Fertilization)</h2>
-                <div class="card-item">
-                    <span class="card-item-label">Cost per Cycle</span>
-                    <span class="card-item-value">$18,000–$30,000</span>
-                </div>
-                <div class="card-item">
-                    <span class="card-item-label">Medications</span>
-                    <span class="card-item-value">$3,000–$6,000</span>
-                </div>
-                <div class="card-item">
-                    <span class="card-item-label">PGT-A Testing</span>
-                    <span class="card-item-value">$2,500–$6,000</span>
-                </div>
-                <div class="card-item">
-                    <span class="card-item-label">Frozen Embryo Transfer</span>
-                    <span class="card-item-value">$3,000–$6,000</span>
-                </div>
-
-                <p class="card-subheading">Success Rates (Per Transfer)</p>
-                <div class="success-table">
-                    <div class="success-row">
-                        <span class="success-age">Under 35</span>
-                        <div class="success-bar"><div class="success-bar-fill" style="width: 50%"></div></div>
-                        <span class="success-rate">45–55%</span>
-                    </div>
-                    <div class="success-row">
-                        <span class="success-age">35–37</span>
-                        <div class="success-bar"><div class="success-bar-fill" style="width: 40%"></div></div>
-                        <span class="success-rate">35–45%</span>
-                    </div>
-                    <div class="success-row">
-                        <span class="success-age">38–40</span>
-                        <div class="success-bar"><div class="success-bar-fill" style="width: 30%"></div></div>
-                        <span class="success-rate">25–35%</span>
-                    </div>
-                    <div class="success-row">
-                        <span class="success-age">41–42</span>
-                        <div class="success-bar"><div class="success-bar-fill" style="width: 15%"></div></div>
-                        <span class="success-rate">10–20%</span>
-                    </div>
-                    <div class="success-row">
-                        <span class="success-age">Over 42</span>
-                        <div class="success-bar"><div class="success-bar-fill" style="width: 7%"></div></div>
-                        <span class="success-rate">3–10%</span>
-                    </div>
-                </div>
+                <div class="card-icon sage">👩‍💼</div>
+                <h2>Who This Session Is Perfect For</h2>
+                <p>Professional women who are:</p>
+                <ul class="benefits-list">
+                    <li>Considering becoming a Solo Mom by Choice</li>
+                    <li>Unsure where to start</li>
+                    <li>Feeling overwhelmed by donor selection</li>
+                    <li>Confused about IVF, meds, vials, and timelines</li>
+                    <li>Wanting actionable clarity, not vague advice</li>
+                    <li>Wishing they had support from someone who actually lived the journey</li>
+                </ul>
             </div>
 
-            <!-- Donor Sperm Card -->
-            <div class="card">
-                <div class="card-icon cream">💫</div>
-                <h2>Donor Sperm</h2>
-                <div class="card-item">
-                    <span class="card-item-label">Cost Per Vial</span>
-                    <span class="card-item-value">$900–$1,500</span>
-                </div>
-                <div class="card-item">
-                    <span class="card-item-label">Shipping</span>
-                    <span class="card-item-value">$200–$400</span>
+            <!-- Agenda Card -->
+            <div class="card agenda-card">
+                <div class="card-icon cream">📅</div>
+                <h2>Session Agenda</h2>
+                
+                <div class="agenda-item">
+                    <div class="agenda-time">2–3 min</div>
+                    <div class="agenda-content">
+                        <h3>Quick Welcome</h3>
+                        <p>Where are you in the process? What's top of mind?</p>
+                    </div>
                 </div>
                 
+                <div class="agenda-item">
+                    <div class="agenda-time">20 min</div>
+                    <div class="agenda-content">
+                        <h3>Your Top Questions</h3>
+                        <p>We focus on what matters most to you:</p>
+                        <ul class="agenda-topics">
+                            <li>Donor selection</li>
+                            <li>Egg freezing</li>
+                            <li>IVF & PGT-A</li>
+                            <li>Transfer decisions</li>
+                            <li>Emotional readiness</li>
+                            <li>Career planning & timing</li>
+                            <li>Cost expectations</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="agenda-item">
+                    <div class="agenda-time">5 min</div>
+                    <div class="agenda-content">
+                        <h3>Clear Next Steps</h3>
+                        <p>You walk away with a personalized plan so you know exactly what to do next.</p>
+                    </div>
+                </div>
+
                 <div class="card-highlight">
-                    <p>Most women buy <strong>2–5 vials</strong> to secure future sibling options.</p>
-                </div>
-            </div>
-
-            <!-- PGT-A Card -->
-            <div class="card">
-                <div class="card-icon rose">🔬</div>
-                <h2>PGT-A Genetic Testing</h2>
-                <p>PGT-A identifies embryos with the correct number of chromosomes (euploid).</p>
-                
-                <p class="card-subheading">Benefits</p>
-                <ul class="benefits-list">
-                    <li>Higher chance of implantation</li>
-                    <li>Lower miscarriage risk</li>
-                    <li>Higher chance of a healthy pregnancy</li>
-                    <li>Helps choose the embryo with the best likelihood of success</li>
-                </ul>
-                
-                <div class="card-note">
-                    <strong>Important:</strong> PGT-A does not guarantee a 100% healthy baby, but it improves the chance of a successful pregnancy by selecting the healthiest embryo.
-                </div>
-            </div>
-
-            <!-- Insurance Tips Card -->
-            <div class="card">
-                <div class="card-icon sage">📋</div>
-                <h2>Insurance Tips</h2>
-                <p style="margin-bottom: 16px;">Check your benefits for coverage on:</p>
-                <ul class="benefits-list">
-                    <li>IVF procedures</li>
-                    <li>Egg retrieval</li>
-                    <li>Embryo freezing</li>
-                    <li>Medications</li>
-                </ul>
-                
-                <div class="card-highlight" style="margin-top: 24px;">
-                    <p><strong>Pro Tips:</strong></p>
-                    <p style="margin-top: 8px;">• Call your fertility support line directly</p>
-                    <p style="margin-top: 4px;">• Ask HR if your employer uses <strong>Progyny</strong>, <strong>Carrot</strong>, or <strong>Kindbody</strong></p>
+                    <p><strong>📄 PDF Follow-Up:</strong> The Solo Mom by Choice Cheat Sheet</p>
                 </div>
             </div>
         </div>
 
-        <!-- Positioning Quote -->
-        <div class="positioning-card">
-            <blockquote>
-                "I'm a Solo Mom by Choice who built my family while managing a demanding career. I help professional women navigate egg freezing, IVF, and donor conception with clarity, strategy, and lived experience."
-            </blockquote>
-            <p class="author">— Solo Mom by Choice</p>
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>Ready to Get Started?</h2>
+            <p>Book your 30-minute session and take the first step with clarity and confidence.</p>
+            <a href="book.html" class="cta-button">Book Your Session</a>
         </div>
     </main>
 
     <footer>
         <p class="brand">Solo Mom Intentional</p>
         <p>Empowering women on their journey to motherhood</p>
+        <div class="legal-disclaimer">
+            <p><strong>Legal Disclaimer:</strong> This session provides personal experience–based guidance and general educational support. It is not medical, legal, or psychological advice. Always consult a licensed healthcare provider for clinical decisions.</p>
+        </div>
     </footer>
 </body>
 </html>
