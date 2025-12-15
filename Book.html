@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Session | Solo Mom Intentional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #FBF9F7;
+            --color-cream: #F5F0EB;
+            --color-blush: #E8D5D0;
+            --color-rose: #C9A9A6;
+            --color-sage: #9CAF96;
+            --color-sage-light: #E8EFE6;
+            --color-lavender: #E8E4F0;
+            --color-text: #3D3D3D;
+            --color-text-light: #6B6B6B;
+            --color-accent: #B67B6B;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Nunito Sans', -apple-system, sans-serif;
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.06);
+            --shadow-hover: 0 12px 40px rgba(0,0,0,0.12);
+            --radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        /* Navigation */
+        .nav {
+            background: var(--color-lavender);
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--color-text);
+            text-decoration: none;
+        }
+
+        .nav-logo:hover { color: var(--color-accent); }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--color-text);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.6);
+            color: var(--color-accent);
+        }
+
+        .nav-links .btn-book {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .nav-links .btn-book:hover {
+            background: #a36a5a;
+            color: white;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--color-text);
+            margin: 6px 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle { display: block; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--color-lavender);
+                flex-direction: column;
+                padding: 16px 24px;
+                gap: 8px;
+            }
+            .nav-links.active { display: flex; }
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--color-blush) 0%, var(--color-rose) 100%);
+            padding: 80px 24px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: 16px;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Content */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        .intro-text {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .intro-text p {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            line-height: 1.8;
+        }
+
+        /* Session Cards */
+        .sessions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+
+        .session-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .session-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .session-card.featured {
+            border: 2px solid var(--color-accent);
+        }
+
+        .session-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--color-accent);
+            color: white;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+
+        .session-header {
+            padding: 32px 32px 24px;
+            border-bottom: 1px solid var(--color-cream);
+        }
+
+        .session-header h2 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: 8px;
+        }
+
+        .session-header .duration {
+            font-size: 14px;
+            color: var(--color-text-light);
+        }
+
+        .session-price {
+            padding: 24px 32px;
+            background: var(--color-cream);
+        }
+
+        .session-price .price {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        .session-price .per {
+            font-size: 14px;
+            color: var(--color-text-light);
+        }
+
+        .session-body {
+            padding: 24px 32px 32px;
+        }
+
+        .session-body p {
+            font-size: 15px;
+            color: var(--color-text-light);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .session-features {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .session-features li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: var(--color-text);
+        }
+
+        .session-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-sage);
+            font-weight: 700;
+        }
+
+        .btn-book-session {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            background: var(--color-accent);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-book-session:hover {
+            background: #a36a5a;
+            transform: translateY(-2px);
+        }
+
+        .btn-book-session.outline {
+            background: transparent;
+            color: var(--color-accent);
+            border: 2px solid var(--color-accent);
+        }
+
+        .btn-book-session.outline:hover {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-section h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--color-text);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .faq-item h3 {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 12px;
+        }
+
+        .faq-item p {
+            font-size: 15px;
+            color: var(--color-text-light);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 24px;
+            background: var(--color-cream);
+            margin-top: 40px;
+        }
+
+        footer .brand {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: 12px;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: var(--color-text-light);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Solo Mom Intentional</a>
+            <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="book.html" class="btn-book">Book a Session</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>Book a Session</h1>
+        <p>One-on-one guidance for your fertility journey</p>
+    </header>
+
+    <main class="container">
+        <div class="intro-text">
+            <p>Ready to take the next step? Choose the session type that fits your needs. Every session is completely confidential and tailored to where you are in your journey.</p>
+        </div>
+
+        <div class="sessions-grid">
+            <!-- Discovery Call -->
+            <div class="session-card">
+                <div class="session-header">
+                    <h2>Discovery Call</h2>
+                    <span class="duration">30 minutes</span>
+                </div>
+                <div class="session-price">
+                    <span class="price">Free</span>
+                    <span class="per">/ introductory call</span>
+                </div>
+                <div class="session-body">
+                    <p>A no-pressure conversation to learn about your situation and see if we're a good fit to work together.</p>
+                    <ul class="session-features">
+                        <li>Get to know each other</li>
+                        <li>Discuss your goals</li>
+                        <li>Answer your initial questions</li>
+                        <li>Explore how I can help</li>
+                    </ul>
+                    <a href="#" class="btn-book-session outline">Schedule Free Call</a>
+                </div>
+            </div>
+
+            <!-- Strategy Session -->
+            <div class="session-card featured">
+                <div class="session-header">
+                    <h2>Strategy Session</h2>
+                    <span class="duration">60 minutes</span>
+                </div>
+                <div class="session-price">
+                    <span class="price">$100</span>
+                    <span class="per">/ session</span>
+                </div>
+                <div class="session-body">
+                    <p>A deep-dive session to create a clear action plan for your fertility journey, tailored to your unique situation.</p>
+                    <ul class="session-features">
+                        <li>Comprehensive situation review</li>
+                        <li>Personalized action plan</li>
+                        <li>Cost & timeline breakdown</li>
+                        <li>Clinic & provider guidance</li>
+                        <li>Follow-up email summary</li>
+                    </ul>
+                    <a href="#" class="btn-book-session">Book Strategy Session</a>
+                </div>
+            </div>
+
+            <!-- Ongoing Support -->
+            <div class="session-card">
+                <div class="session-header">
+                    <h2>Ongoing Support</h2>
+                    <span class="duration">4 sessions / month</span>
+                </div>
+                <div class="session-price">
+                    <span class="price">$400</span>
+                    <span class="per">/ month</span>
+                </div>
+                <div class="session-body">
+                    <p>Continuous support throughout your fertility journey with weekly check-ins and on-demand guidance.</p>
+                    <ul class="session-features">
+                        <li>4 x 45-minute sessions</li>
+                        <li>Email support between sessions</li>
+                        <li>Appointment prep & debrief</li>
+                        <li>Decision-making support</li>
+                        <li>Emotional & practical guidance</li>
+                    </ul>
+                    <a href="#" class="btn-book-session outline">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <section class="faq-section">
+            <h2>Common Questions</h2>
+            
+            <div class="faq-item">
+                <h3>How do sessions work?</h3>
+                <p>All sessions are conducted via video call (Zoom). After booking, you'll receive a confirmation email with the link and any prep materials.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What if I need to reschedule?</h3>
+                <p>Life happens! You can reschedule up to 24 hours before your appointment at no charge.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is everything confidential?</h3>
+                <p>Absolutely. Everything we discuss stays between us. Your privacy is my priority.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>I'm not sure which session is right for me.</h3>
+                <p>Start with the free Discovery Call! It's the perfect way to discuss your needs and figure out the best path forward together.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="brand">Solo Mom Intentional</p>
+        <p>Empowering women on their journey to motherhood</p>
+    </footer>
+</body>
+</html>
