@@ -171,6 +171,107 @@
             line-height: 1.8;
         }
 
+        /* About the Session */
+        .about-session {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+            background: white;
+            border-radius: var(--radius);
+            padding: 48px;
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-session::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-lavender), var(--color-rose), var(--color-accent));
+        }
+
+        @media (max-width: 768px) {
+            .about-session {
+                grid-template-columns: 1fr;
+                padding: 32px;
+            }
+        }
+
+        .about-session-content h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: 20px;
+        }
+
+        .session-description {
+            font-size: 1.05rem;
+            color: var(--color-text-light);
+            line-height: 1.8;
+        }
+
+        .what-youll-gain {
+            background: var(--color-lavender);
+            border-radius: 14px;
+            padding: 32px;
+        }
+
+        .what-youll-gain h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: 20px;
+        }
+
+        .gain-items {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .gain-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            padding: 14px 18px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gain-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .gain-item.bonus {
+            background: linear-gradient(135deg, var(--color-accent), #c98b7b);
+            color: white;
+        }
+
+        .gain-item.bonus .gain-text {
+            color: white;
+            font-weight: 600;
+        }
+
+        .gain-icon {
+            font-size: 20px;
+        }
+
+        .gain-text {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
         /* Session Cards */
         .sessions-grid {
             display: grid;
@@ -397,7 +498,40 @@
 
     <main class="container">
         <div class="intro-text">
-            <p>Ready to take the next step? Choose the session type that fits your needs. Every session is completely confidential and tailored to where you are in your journey.</p>
+            <p>Ready to take the next step? Book a session and get the clarity and confidence you need to move forward on your fertility journey.</p>
+        </div>
+
+        <!-- About the Session -->
+        <div class="about-session">
+            <div class="about-session-content">
+                <h2>About the Session</h2>
+                <p class="session-description">Becoming a Solo Mom by Choice is an empowered decision, but the process can feel overwhelming, isolating, and unclear. I help women cut through the noise, understand their options, and move forward with confidence — without putting their careers or lives on pause.</p>
+            </div>
+            <div class="what-youll-gain">
+                <h3>What You'll Gain</h3>
+                <div class="gain-items">
+                    <div class="gain-item">
+                        <span class="gain-icon">✨</span>
+                        <span class="gain-text">Confidence</span>
+                    </div>
+                    <div class="gain-item">
+                        <span class="gain-icon">🔍</span>
+                        <span class="gain-text">Clarity</span>
+                    </div>
+                    <div class="gain-item">
+                        <span class="gain-icon">📍</span>
+                        <span class="gain-text">Next Steps</span>
+                    </div>
+                    <div class="gain-item">
+                        <span class="gain-icon">💜</span>
+                        <span class="gain-text">Support</span>
+                    </div>
+                    <div class="gain-item bonus">
+                        <span class="gain-icon">📋</span>
+                        <span class="gain-text">Cheat Sheet Included</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="sessions-grid">
@@ -430,7 +564,7 @@
                     <span class="duration">60 minutes</span>
                 </div>
                 <div class="session-price">
-                    <span class="price">$100</span>
+                    <span class="price">$150</span>
                     <span class="per">/ session</span>
                 </div>
                 <div class="session-body">
