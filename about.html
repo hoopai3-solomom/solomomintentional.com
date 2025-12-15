@@ -234,6 +234,26 @@
             margin-bottom: 16px;
         }
 
+        /* Hero Image */
+        .hero-image-container {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .hero-image {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15), 0 6px 16px rgba(0,0,0,0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .hero-image:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 24px 60px rgba(0,0,0,0.18), 0 12px 24px rgba(0,0,0,0.12);
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -279,20 +299,24 @@
     </header>
 
     <main class="container">
-        <section class="about-section">
-            <h2>My Story</h2>
-            <p>I'm a Solo Mom by Choice who built my family while managing a demanding career. I understand the unique challenges professional women face when considering egg freezing, IVF, and donor conception.</p>
-            <p>After going through this journey myself, I realized how much I wished I had someone to guide me—someone who had been there and could offer real, practical advice alongside emotional support.</p>
-            <p>That's why I created Solo Mom Intentional: to be the resource and guide I wish I had when I started my own journey to motherhood.</p>
-        </section>
-
-        <div class="highlight-box">
-            <p>"I help professional women navigate egg freezing, IVF, and donor conception with clarity, strategy, and lived experience."</p>
+        <div class="hero-image-container">
+            <img src="images/Lisa Hooper.png" alt="Lisa Hooper" class="hero-image">
         </div>
 
         <section class="about-section">
-            <h2>What I Offer</h2>
-            <p>Whether you're just starting to explore your options or you're deep in the process and feeling overwhelmed, I'm here to help you make informed decisions with confidence.</p>
+            <h2>Hi, I'm Lisa.</h2>
+            <p>I'm a Solo Mom by Choice who built my family while navigating a demanding professional career. Like many women, I didn't choose this path because I planned to do it alone — I chose it because I didn't want to wait any longer for the right circumstances to start the family I wanted.</p>
+            <p>When I began my journey, I was successful, informed, and capable — yet still overwhelmed. There was no clear roadmap, no trusted person to ask real questions, and no resource that spoke to women balancing fertility decisions with full lives and careers.</p>
+            <p>I created <strong>Solo Mom by Choice — Intentional by Design</strong> to be the guide I wish I had.</p>
+        </section>
+
+        <div class="highlight-box">
+            <p>"My goal is simple: to give you clarity, structure, and support so you can make informed decisions about egg freezing, IVF, donor conception, and timing — without fear, confusion, or pressure."</p>
+        </div>
+
+        <section class="about-section">
+            <h2>You Don't Have to Do This Alone</h2>
+            <p>You don't have to figure it out the hard way. Whether you're just starting to explore your options or you're deep in the process and feeling overwhelmed, I'm here to help you make informed decisions with confidence.</p>
             
             <div class="values-grid">
                 <div class="value-card">
@@ -302,8 +326,8 @@
                 </div>
                 <div class="value-card">
                     <div class="value-icon">📋</div>
-                    <h3>Strategy</h3>
-                    <p>Create a practical plan that works with your career, finances, and timeline—not against them.</p>
+                    <h3>Structure</h3>
+                    <p>Get a clear roadmap that works with your career, finances, and timeline—not against them.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">❤️</div>
@@ -311,12 +335,6 @@
                     <p>Get guidance from someone who truly understands because I've walked this path myself.</p>
                 </div>
             </div>
-        </section>
-
-        <section class="about-section">
-            <h2>Why Work With Me?</h2>
-            <p>I combine personal experience with practical knowledge to offer guidance that's both empathetic and actionable. I've navigated the complex world of fertility treatments while maintaining a successful career, and I know it's possible to do both.</p>
-            <p>My approach is straightforward: I'll give you the information you need, help you understand your options, and support you in making decisions that align with your values and goals.</p>
         </section>
     </main>
 
