@@ -3,10 +3,569 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solo mom</title>
+    <title>Solo Mom by Choice | Egg Freezing, IVF, Donor Sperm & PGT-A Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #FBF9F7;
+            --color-cream: #F5F0EB;
+            --color-blush: #E8D5D0;
+            --color-rose: #C9A9A6;
+            --color-sage: #9CAF96;
+            --color-sage-light: #E8EFE6;
+            --color-text: #3D3D3D;
+            --color-text-light: #6B6B6B;
+            --color-accent: #B67B6B;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Nunito Sans', -apple-system, sans-serif;
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.06);
+            --shadow-medium: 0 8px 30px rgba(0,0,0,0.08);
+            --shadow-hover: 0 12px 40px rgba(0,0,0,0.12);
+            --radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-blush) 50%, var(--color-rose) 100%);
+            padding: 80px 24px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 60%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(30px, 30px) rotate(180deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-label {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 24px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 500;
+            line-height: 1.2;
+            color: var(--color-text);
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.2s forwards;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-display);
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+            font-weight: 400;
+            font-style: italic;
+            color: var(--color-text-light);
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.4s forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 36px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-rose), var(--color-sage));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+
+        .card-icon.blush { background: var(--color-blush); }
+        .card-icon.sage { background: var(--color-sage-light); }
+        .card-icon.cream { background: var(--color-cream); }
+        .card-icon.rose { background: rgba(201, 169, 166, 0.3); }
+
+        .card h2 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .card-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--color-cream);
+        }
+
+        .card-item:last-child {
+            border-bottom: none;
+        }
+
+        .card-item-label {
+            font-size: 14px;
+            color: var(--color-text-light);
+        }
+
+        .card-item-value {
+            font-weight: 600;
+            color: var(--color-text);
+            font-size: 14px;
+        }
+
+        .card-subheading {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--color-accent);
+            margin: 24px 0 12px;
+        }
+
+        .card p {
+            font-size: 15px;
+            color: var(--color-text-light);
+            line-height: 1.7;
+        }
+
+        .card-note {
+            background: var(--color-sage-light);
+            padding: 16px 20px;
+            border-radius: 10px;
+            font-size: 14px;
+            color: var(--color-text);
+            margin-top: 20px;
+            border-left: 3px solid var(--color-sage);
+        }
+
+        .card-highlight {
+            background: linear-gradient(135deg, var(--color-cream) 0%, white 100%);
+            padding: 16px 20px;
+            border-radius: 10px;
+            margin-top: 16px;
+        }
+
+        .card-highlight p {
+            font-size: 13px;
+            font-style: italic;
+        }
+
+        /* Benefits List */
+        .benefits-list {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .benefits-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            font-size: 15px;
+            color: var(--color-text-light);
+        }
+
+        .benefits-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-sage);
+            font-weight: 700;
+        }
+
+        /* Positioning Card - Full Width */
+        .positioning-card {
+            background: linear-gradient(135deg, var(--color-text) 0%, #2a2a2a 100%);
+            color: white;
+            border-radius: var(--radius);
+            padding: 60px;
+            margin-top: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .positioning-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            font-family: var(--font-display);
+            font-size: 180px;
+            color: rgba(255,255,255,0.05);
+            line-height: 1;
+        }
+
+        .positioning-card blockquote {
+            font-family: var(--font-display);
+            font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+            font-style: italic;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .positioning-card .author {
+            margin-top: 32px;
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-rose);
+        }
+
+        /* Success Rates Table */
+        .success-table {
+            width: 100%;
+            margin-top: 16px;
+        }
+
+        .success-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .success-row:not(:last-child) {
+            border-bottom: 1px solid var(--color-cream);
+        }
+
+        .success-age {
+            font-size: 14px;
+            color: var(--color-text-light);
+        }
+
+        .success-rate {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--color-accent);
+        }
+
+        .success-bar {
+            flex: 1;
+            height: 6px;
+            background: var(--color-cream);
+            border-radius: 3px;
+            margin: 0 16px;
+            overflow: hidden;
+        }
+
+        .success-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-sage), var(--color-rose));
+            border-radius: 3px;
+            transition: width 1s ease;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 24px;
+            background: var(--color-cream);
+        }
+
+        footer p {
+            font-size: 14px;
+            color: var(--color-text-light);
+        }
+
+        footer .brand {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 60px 20px 80px;
+            }
+
+            .card {
+                padding: 28px;
+            }
+
+            .positioning-card {
+                padding: 40px 28px;
+            }
+
+            .positioning-card::before {
+                font-size: 120px;
+                left: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Solomom Intentional</h1>
-    <p>Coming soon...</p>
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-label">Your Complete Resource</p>
+            <h1>The Modern Solo Mom by Choice Guide</h1>
+            <p class="hero-subtitle">Egg Freezing, IVF, Donor Sperm & PGT-A</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="cards-grid">
+            <!-- Egg Freezing Card -->
+            <div class="card">
+                <div class="card-icon blush">🥚</div>
+                <h2>Egg Freezing</h2>
+                <div class="card-item">
+                    <span class="card-item-label">Cost (No Insurance)</span>
+                    <span class="card-item-value">$10,000–$20,000</span>
+                </div>
+                <div class="card-item">
+                    <span class="card-item-label">Medications</span>
+                    <span class="card-item-value">$3,000–$6,000</span>
+                </div>
+                <div class="card-item">
+                    <span class="card-item-label">Storage (Annual)</span>
+                    <span class="card-item-value">$500–$1,000</span>
+                </div>
+                
+                <p class="card-subheading">Average Eggs Retrieved</p>
+                <div class="card-item">
+                    <span class="card-item-label">Age 30–34</span>
+                    <span class="card-item-value">15–20 eggs</span>
+                </div>
+                <div class="card-item">
+                    <span class="card-item-label">Age 35–37</span>
+                    <span class="card-item-value">10–15 eggs</span>
+                </div>
+                <div class="card-item">
+                    <span class="card-item-label">Age 38–40</span>
+                    <span class="card-item-value">6–12 eggs</span>
+                </div>
+                
+                <div class="card-note">
+                    <strong>Rule of Thumb:</strong> ~10 mature eggs ≈ 1 potential baby
+                </div>
+            </div>
+
+            <!-- IVF Card -->
+            <div class="card">
+                <div class="card-icon sage">🧬</div>
+                <h2>IVF (In Vitro Fertilization)</h2>
+                <div class="card-item">
+                    <span class="card-item-label">Cost per Cycle</span>
+                    <span class="card-item-value">$18,000–$30,000</span>
+                </div>
+                <div class="card-item">
+                    <span class="card-item-label">Medications</span>
+                    <span class="card-item-value">$3,000–$6,000</span>
+                </div>
+                <div class="card-item">
+                    <span class="card-item-label">PGT-A Testing</span>
+                    <span class="card-item-value">$2,500–$6,000</span>
+                </div>
+                <div class="card-item">
+                    <span class="card-item-label">Frozen Embryo Transfer</span>
+                    <span class="card-item-value">$3,000–$6,000</span>
+                </div>
+
+                <p class="card-subheading">Success Rates (Per Transfer)</p>
+                <div class="success-table">
+                    <div class="success-row">
+                        <span class="success-age">Under 35</span>
+                        <div class="success-bar"><div class="success-bar-fill" style="width: 50%"></div></div>
+                        <span class="success-rate">45–55%</span>
+                    </div>
+                    <div class="success-row">
+                        <span class="success-age">35–37</span>
+                        <div class="success-bar"><div class="success-bar-fill" style="width: 40%"></div></div>
+                        <span class="success-rate">35–45%</span>
+                    </div>
+                    <div class="success-row">
+                        <span class="success-age">38–40</span>
+                        <div class="success-bar"><div class="success-bar-fill" style="width: 30%"></div></div>
+                        <span class="success-rate">25–35%</span>
+                    </div>
+                    <div class="success-row">
+                        <span class="success-age">41–42</span>
+                        <div class="success-bar"><div class="success-bar-fill" style="width: 15%"></div></div>
+                        <span class="success-rate">10–20%</span>
+                    </div>
+                    <div class="success-row">
+                        <span class="success-age">Over 42</span>
+                        <div class="success-bar"><div class="success-bar-fill" style="width: 7%"></div></div>
+                        <span class="success-rate">3–10%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Donor Sperm Card -->
+            <div class="card">
+                <div class="card-icon cream">💫</div>
+                <h2>Donor Sperm</h2>
+                <div class="card-item">
+                    <span class="card-item-label">Cost Per Vial</span>
+                    <span class="card-item-value">$900–$1,500</span>
+                </div>
+                <div class="card-item">
+                    <span class="card-item-label">Shipping</span>
+                    <span class="card-item-value">$200–$400</span>
+                </div>
+                
+                <div class="card-highlight">
+                    <p>Most women buy <strong>2–5 vials</strong> to secure future sibling options.</p>
+                </div>
+            </div>
+
+            <!-- PGT-A Card -->
+            <div class="card">
+                <div class="card-icon rose">🔬</div>
+                <h2>PGT-A Genetic Testing</h2>
+                <p>PGT-A identifies embryos with the correct number of chromosomes (euploid).</p>
+                
+                <p class="card-subheading">Benefits</p>
+                <ul class="benefits-list">
+                    <li>Higher chance of implantation</li>
+                    <li>Lower miscarriage risk</li>
+                    <li>Higher chance of a healthy pregnancy</li>
+                    <li>Helps choose the embryo with the best likelihood of success</li>
+                </ul>
+                
+                <div class="card-note">
+                    <strong>Important:</strong> PGT-A does not guarantee a 100% healthy baby, but it improves the chance of a successful pregnancy by selecting the healthiest embryo.
+                </div>
+            </div>
+
+            <!-- Insurance Tips Card -->
+            <div class="card">
+                <div class="card-icon sage">📋</div>
+                <h2>Insurance Tips</h2>
+                <p style="margin-bottom: 16px;">Check your benefits for coverage on:</p>
+                <ul class="benefits-list">
+                    <li>IVF procedures</li>
+                    <li>Egg retrieval</li>
+                    <li>Embryo freezing</li>
+                    <li>Medications</li>
+                </ul>
+                
+                <div class="card-highlight" style="margin-top: 24px;">
+                    <p><strong>Pro Tips:</strong></p>
+                    <p style="margin-top: 8px;">• Call your fertility support line directly</p>
+                    <p style="margin-top: 4px;">• Ask HR if your employer uses <strong>Progyny</strong>, <strong>Carrot</strong>, or <strong>Kindbody</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Positioning Quote -->
+        <div class="positioning-card">
+            <blockquote>
+                "I'm a Solo Mom by Choice who built my family while managing a demanding career. I help professional women navigate egg freezing, IVF, and donor conception with clarity, strategy, and lived experience."
+            </blockquote>
+            <p class="author">— Solo Mom by Choice</p>
+        </div>
+    </main>
+
+    <footer>
+        <p class="brand">Solo Mom Intentional</p>
+        <p>Empowering women on their journey to motherhood</p>
+    </footer>
 </body>
 </html>
