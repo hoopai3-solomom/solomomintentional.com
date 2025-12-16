@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partners | Solo Mom Intentional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #FBF9F7;
+            --color-cream: #F5F0EB;
+            --color-blush: #E8D5D0;
+            --color-rose: #C9A9A6;
+            --color-sage: #9CAF96;
+            --color-sage-light: #E8EFE6;
+            --color-lavender: #E8E4F0;
+            --color-text: #3D3D3D;
+            --color-text-light: #6B6B6B;
+            --color-accent: #B67B6B;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Nunito Sans', -apple-system, sans-serif;
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.06);
+            --shadow-hover: 0 12px 40px rgba(0,0,0,0.12);
+            --radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        /* Navigation */
+        .nav {
+            background: var(--color-lavender);
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--color-text);
+            text-decoration: none;
+        }
+
+        .nav-logo:hover { color: var(--color-accent); }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--color-text);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.6);
+            color: var(--color-accent);
+        }
+
+        .nav-links .btn-book {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .nav-links .btn-book:hover {
+            background: #a36a5a;
+            color: white;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--color-text);
+            margin: 6px 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle { display: block; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--color-lavender);
+                flex-direction: column;
+                padding: 16px 24px;
+                gap: 8px;
+            }
+            .nav-links.active { display: flex; }
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--color-sage-light) 0%, var(--color-cream) 100%);
+            padding: 80px 24px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: 16px;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Content */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        .intro-text {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .intro-text p {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            line-height: 1.8;
+        }
+
+        /* Partners Grid */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+
+        .partner-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 40px 32px;
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .partner-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-sage), var(--color-rose));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .partner-card:hover::before {
+            opacity: 1;
+        }
+
+        .partner-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .partner-card:hover .partner-logo {
+            transform: scale(1.05);
+        }
+
+        .partner-logo-placeholder {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--color-lavender);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            margin: 0 auto 24px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .partner-card:hover .partner-logo-placeholder {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .partner-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: 8px;
+        }
+
+        .partner-card .partner-type {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--color-accent);
+            margin-bottom: 16px;
+        }
+
+        .partner-card p {
+            font-size: 15px;
+            color: var(--color-text-light);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .partner-link {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-accent);
+            text-decoration: none;
+            padding: 10px 24px;
+            border: 2px solid var(--color-accent);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .partner-link:hover {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        /* Become a Partner CTA */
+        .partner-cta {
+            background: linear-gradient(135deg, var(--color-text) 0%, #2a2a2a 100%);
+            color: white;
+            border-radius: var(--radius);
+            padding: 60px;
+            text-align: center;
+        }
+
+        .partner-cta h2 {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .partner-cta p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 32px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .partner-cta-button {
+            display: inline-block;
+            padding: 18px 48px;
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--color-text);
+            background: white;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .partner-cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 24px;
+            background: var(--color-cream);
+            margin-top: 40px;
+        }
+
+        footer .brand {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: 12px;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: var(--color-text-light);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Solo Mom Intentional</a>
+            <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="partners.html">Partners</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="book.html" class="btn-book">Book a Session</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>Our Partners</h1>
+        <p>Trusted resources and providers supporting your journey to solo motherhood</p>
+    </header>
+
+    <main class="container">
+        <div class="intro-text">
+            <p>I've partnered with trusted professionals and organizations who share my commitment to supporting women on their fertility journey. Each partner has been personally vetted to ensure they provide exceptional care and service.</p>
+        </div>
+
+        <div class="partners-grid">
+            <!-- Partner Card Template -->
+            <div class="partner-card">
+                <div class="partner-logo-placeholder">🏥</div>
+                <h3>Fertility Clinic</h3>
+                <p class="partner-type">Medical Partner</p>
+                <p>Leading fertility specialists providing comprehensive IVF, egg freezing, and reproductive care services.</p>
+                <a href="#" class="partner-link">Learn More</a>
+            </div>
+
+            <div class="partner-card">
+                <div class="partner-logo-placeholder">🧬</div>
+                <h3>Sperm Bank</h3>
+                <p class="partner-type">Donor Services</p>
+                <p>Trusted donor sperm bank with extensive donor profiles and excellent support throughout the selection process.</p>
+                <a href="#" class="partner-link">Learn More</a>
+            </div>
+
+            <div class="partner-card">
+                <div class="partner-logo-placeholder">💼</div>
+                <h3>Fertility Benefits</h3>
+                <p class="partner-type">Financial Partner</p>
+                <p>Helping you navigate insurance benefits and financing options for your fertility treatments.</p>
+                <a href="#" class="partner-link">Learn More</a>
+            </div>
+
+            <div class="partner-card">
+                <div class="partner-logo-placeholder">🧘</div>
+                <h3>Wellness Support</h3>
+                <p class="partner-type">Holistic Care</p>
+                <p>Mental health and wellness resources specifically designed for women on their fertility journey.</p>
+                <a href="#" class="partner-link">Learn More</a>
+            </div>
+
+            <div class="partner-card">
+                <div class="partner-logo-placeholder">⚖️</div>
+                <h3>Legal Services</h3>
+                <p class="partner-type">Legal Partner</p>
+                <p>Family law attorneys specializing in donor agreements, parental rights, and solo parent documentation.</p>
+                <a href="#" class="partner-link">Learn More</a>
+            </div>
+
+            <div class="partner-card">
+                <div class="partner-logo-placeholder">👶</div>
+                <h3>Parenting Resources</h3>
+                <p class="partner-type">Community</p>
+                <p>Solo mom communities and resources for support before, during, and after your journey to motherhood.</p>
+                <a href="#" class="partner-link">Learn More</a>
+            </div>
+        </div>
+
+        <div class="partner-cta">
+            <h2>Become a Partner</h2>
+            <p>Are you a provider or organization that supports women on their fertility journey? Let's connect.</p>
+            <a href="contact.html" class="partner-cta-button">Get in Touch</a>
+        </div>
+    </main>
+
+    <footer>
+        <p class="brand">Solo Mom Intentional</p>
+        <p>Empowering women on their journey to motherhood</p>
+    </footer>
+</body>
+</html>
