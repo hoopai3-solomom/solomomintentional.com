@@ -63,9 +63,15 @@
             font-weight: 600;
             color: var(--color-text);
             text-decoration: none;
+            transition: opacity 0.3s ease;
         }
 
-        .nav-logo:hover { color: var(--color-accent); }
+        .nav-logo:hover { opacity: 0.8; }
+
+        .nav-logo-img {
+            height: 50px;
+            width: auto;
+        }
 
         .nav-links {
             display: flex;
@@ -476,7 +482,9 @@
 <body>
     <nav class="nav">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">Solo Mom Intentional</a>
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo (2).png" alt="Solo Mom Intentional" class="nav-logo-img">
+            </a>
             <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
                 <span></span>
                 <span></span>
@@ -536,32 +544,10 @@
         </div>
 
         <div class="sessions-grid">
-            <!-- Discovery Call -->
-            <div class="session-card">
-                <div class="session-header">
-                    <h2>Discovery Call</h2>
-                    <span class="duration">30 minutes</span>
-                </div>
-                <div class="session-price">
-                    <span class="price">Free</span>
-                    <span class="per">/ introductory call</span>
-                </div>
-                <div class="session-body">
-                    <p>A no-pressure conversation to learn about your situation and see if we're a good fit to work together.</p>
-                    <ul class="session-features">
-                        <li>Get to know each other</li>
-                        <li>Discuss your goals</li>
-                        <li>Answer your initial questions</li>
-                        <li>Explore how I can help</li>
-                    </ul>
-                    <a href="https://calendly.com/hello-solomomintentional/30min" class="btn-book-session outline">Schedule Free Call</a>
-                </div>
-            </div>
-
-            <!-- Strategy Session -->
+            <!-- Clarity Session -->
             <div class="session-card featured">
                 <div class="session-header">
-                    <h2>Strategy Session</h2>
+                    <h2>Clarity Session</h2>
                     <span class="duration">60 minutes</span>
                 </div>
                 <div class="session-price">
@@ -577,7 +563,7 @@
                         <li>Clinic & provider guidance</li>
                         <li>Follow-up email summary</li>
                     </ul>
-                    <a href="https://calendly.com/hello-solomomintentional/30min" class="btn-book-session">Book Strategy Session</a>
+                    <a href="https://calendly.com/hello-solomomintentional/30min" class="btn-book-session">Book Clarity Session</a>
                 </div>
             </div>
 
