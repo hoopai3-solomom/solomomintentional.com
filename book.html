@@ -425,6 +425,78 @@
             margin: 0 auto;
         }
 
+        /* Testimonials Section */
+        .testimonials-section {
+            margin-bottom: 80px;
+        }
+
+        .testimonials-section h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--color-text);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 36px;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .testimonial-card .quote-icon {
+            font-family: var(--font-display);
+            font-size: 72px;
+            color: var(--color-lavender);
+            line-height: 1;
+            position: absolute;
+            top: 20px;
+            left: 28px;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            color: var(--color-text-light);
+            line-height: 1.8;
+            margin-bottom: 24px;
+            padding-top: 32px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            border-top: 1px solid var(--color-cream);
+            padding-top: 16px;
+        }
+
+        .author-name {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: 4px;
+        }
+
+        .author-title {
+            font-size: 13px;
+            color: var(--color-accent);
+            font-weight: 500;
+        }
+
         .faq-section h2 {
             font-family: var(--font-display);
             font-size: 2rem;
@@ -591,6 +663,39 @@
             </div>
         </div>
 
+        <!-- Testimonials -->
+        <section class="testimonials-section">
+            <h2>What Women Are Saying</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Lisa's knowledge of the IVF process is incredibly thoughtful and practical. She helped me understand what to expect, ask the right questions, and feel more confident in my decisions. Having her insight brought a sense of calm and clarity during a time that can otherwise feel very uncertain. I'm so grateful for her guidance during such an emotional journey.</p>
+                    <div class="testimonial-author">
+                        <p class="author-name">Addi</p>
+                        <p class="author-title">Account Executive</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">When I spoke with Lisa, I had already gone through IVF and the sperm donor process, but I was starting to get scared about how I would manage it all as a single mom with a demanding career. Talking to Lisa put me at ease. She did not sugarcoat the hard parts, but she showed me how it can work. I walked away feeling so much better.</p>
+                    <div class="testimonial-author">
+                        <p class="author-name">Daniella</p>
+                        <p class="author-title">Director of IT</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">I felt stressed from every angle–job, getting older, being single even though I was trying to find someone–and egg freezing scared me. Lisa normalized everything I was feeling and helped me approach it with confidence instead of fear. And now I have healthy eggs for when I am ready which puts me at ease.</p>
+                    <div class="testimonial-author">
+                        <p class="author-name">Lindsay</p>
+                        <p class="author-title">Account Director</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="faq-section">
             <h2>Common Questions</h2>
             
@@ -607,11 +712,6 @@
             <div class="faq-item">
                 <h3>Is everything confidential?</h3>
                 <p>Absolutely. Everything we discuss stays between us. Your privacy is my priority.</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>I'm not sure which session is right for me.</h3>
-                <p>Start with the free Discovery Call! It's the perfect way to discuss your needs and figure out the best path forward together.</p>
             </div>
         </section>
     </main>
