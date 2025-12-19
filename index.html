@@ -6,7 +6,7 @@
     <title>Solo Mom by Choice | Egg Freezing, IVF, Donor Sperm & PGT-A Guide</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --color-bg: #FBF9F7;
@@ -479,30 +479,44 @@
             background: linear-gradient(135deg, var(--color-text) 0%, #2a2a2a 100%);
             color: white;
             border-radius: var(--radius);
-            padding: 60px;
+            padding: 60px 40px;
             margin-top: 40px;
             text-align: center;
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
         }
 
-        .cta-quote {
-            font-family: 'Pinyon Script', cursive;
-            font-size: 180px;
-            color: rgba(255,255,255,0.08);
-            position: absolute;
-            line-height: 1;
+        .cta-testimonial {
+            flex: 1;
+            max-width: 280px;
+            text-align: center;
         }
 
-        .cta-quote-left {
-            top: -20px;
-            left: 20px;
+        .cta-testimonial-text {
+            font-family: 'Caveat', cursive;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.5;
+            margin-bottom: 12px;
         }
 
-        .cta-quote-right {
-            bottom: -60px;
-            right: 20px;
-            transform: rotate(180deg);
+        .cta-testimonial-author {
+            font-family: var(--font-body);
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
+            font-weight: 500;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            flex: 1.2;
+            max-width: 400px;
         }
 
         .cta-section h2 {
@@ -510,8 +524,6 @@
             font-size: 2.2rem;
             font-weight: 500;
             margin-bottom: 16px;
-            position: relative;
-            z-index: 1;
         }
 
         .cta-section p {
@@ -521,8 +533,6 @@
             max-width: 500px;
             margin-left: auto;
             margin-right: auto;
-            position: relative;
-            z-index: 1;
         }
 
         .cta-button {
@@ -536,8 +546,6 @@
             border-radius: 10px;
             text-decoration: none;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            z-index: 1;
         }
 
         .cta-button:hover {
@@ -688,6 +696,15 @@
                 font-size: 120px;
                 left: 20px;
             }
+
+            .cta-section {
+                padding: 50px 30px;
+                flex-direction: column;
+            }
+
+            .cta-testimonial {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -804,11 +821,19 @@
 
         <!-- CTA Section -->
         <div class="cta-section">
-            <span class="cta-quote cta-quote-left">"</span>
-            <h2>Ready to Get Started?</h2>
-            <p>Book your 30-minute session and take the first step with clarity and confidence.</p>
-            <a href="book.html" class="cta-button">Book Your Session</a>
-            <span class="cta-quote cta-quote-right">"</span>
+            <div class="cta-testimonial cta-testimonial-left">
+                <p class="cta-testimonial-text">"Lisa's knowledge of the IVF process is incredibly thoughtful and practical. She helped me understand what to expect, ask the right questions, and feel more confident in my decisions."</p>
+                <p class="cta-testimonial-author">— Addi, Account Executive</p>
+            </div>
+            <div class="cta-content">
+                <h2>Ready to Get Started?</h2>
+                <p>Book your 30-minute session and take the first step with clarity and confidence.</p>
+                <a href="book.html" class="cta-button">Book Your Session</a>
+            </div>
+            <div class="cta-testimonial cta-testimonial-right">
+                <p class="cta-testimonial-text">"Lisa normalized everything I was feeling and helped me approach it with confidence instead of fear. And now I have healthy eggs for when I am ready."</p>
+                <p class="cta-testimonial-author">— Lindsay, Account Director</p>
+            </div>
         </div>
     </main>
 
