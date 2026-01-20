@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Complete Egg Freezing Guide for Professional Women | Solo Mom Intentional</title>
+    <meta name="description" content="Everything professional women need to know about egg freezing—from timing and costs to what to expect during the process.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #FBF9F7;
+            --color-cream: #F5F0EB;
+            --color-blush: #E8D5D0;
+            --color-rose: #C9A9A6;
+            --color-sage: #9CAF96;
+            --color-sage-light: #E8EFE6;
+            --color-lavender: #E8E4F0;
+            --color-lavender-dark: #C9C1D9;
+            --color-text: #3D3D3D;
+            --color-text-light: #6B6B6B;
+            --color-accent: #B67B6B;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Nunito Sans', -apple-system, sans-serif;
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.06);
+            --shadow-hover: 0 12px 40px rgba(0,0,0,0.12);
+            --radius: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        /* Navigation */
+        .nav {
+            background: var(--color-lavender);
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo { text-decoration: none; }
+        .nav-logo-img { height: 50px; width: auto; }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--color-text);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.6);
+            color: var(--color-accent);
+        }
+
+        .nav-links .btn-book {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .nav-links .btn-book:hover {
+            background: #a36a5a;
+            color: white;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--color-text);
+            margin: 6px 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle { display: block; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--color-lavender);
+                flex-direction: column;
+                padding: 16px 24px;
+                gap: 8px;
+            }
+            .nav-links.active { display: flex; }
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-blush) 50%, var(--color-rose) 100%);
+            padding: 60px 24px 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--color-text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover { color: var(--color-accent); }
+
+        .category-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #E8E4F0;
+            color: #3D3D3D;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+        }
+
+        .meta-divider {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--color-text-light);
+        }
+
+        /* Featured Image */
+        .featured-image {
+            max-width: 900px;
+            margin: -40px auto 0;
+            padding: 0 24px;
+        }
+
+        .featured-image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--color-blush) 0%, var(--color-rose) 50%, var(--color-sage) 100%);
+            border-radius: var(--radius);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        /* Article */
+        article {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        article h2 {
+            font-family: var(--font-display);
+            font-size: 1.875rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        article h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-top: 32px;
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+
+        article p {
+            font-size: 1.1rem;
+            margin-bottom: 24px;
+            color: var(--color-text);
+            line-height: 1.8;
+        }
+
+        article ul, article ol {
+            margin-bottom: 24px;
+            padding-left: 24px;
+        }
+
+        article li {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        article strong {
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        article blockquote {
+            border-left: 4px solid var(--color-accent);
+            margin: 32px 0;
+            padding: 20px 24px;
+            background: var(--color-cream);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--color-text-light);
+        }
+
+        article table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 1rem;
+        }
+
+        article th, article td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--color-cream);
+        }
+
+        article th {
+            background: var(--color-cream);
+            font-weight: 600;
+        }
+
+        article hr {
+            border: none;
+            height: 1px;
+            background: var(--color-blush);
+            margin: 40px 0;
+        }
+
+        /* Share Section */
+        .share-section {
+            border-top: 1px solid var(--color-blush);
+            padding-top: 32px;
+            margin-top: 48px;
+        }
+
+        .share-label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 16px;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .share-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--color-cream);
+            color: var(--color-text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .share-btn:hover {
+            background: var(--color-accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Back Button */
+        .article-footer {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 24px 60px;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            background: white;
+            color: var(--color-accent);
+            border: 2px solid var(--color-accent);
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        /* CTA Box */
+        .cta-box {
+            background: linear-gradient(135deg, var(--color-lavender) 0%, var(--color-blush) 100%);
+            border-radius: var(--radius);
+            padding: 32px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .cta-box p {
+            font-size: 1rem;
+            margin-bottom: 16px;
+        }
+
+        .cta-box a {
+            color: var(--color-accent);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-cream);
+            padding: 60px 24px 40px;
+        }
+
+        .footer-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 48px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--color-blush);
+        }
+
+        .footer-brand { max-width: 280px; }
+
+        .footer-brand .brand {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: var(--color-text-light);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            color: var(--color-text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .footer-social a:hover {
+            background: var(--color-accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .footer-nav h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 20px;
+        }
+
+        .footer-nav ul { list-style: none; }
+        .footer-nav li { margin-bottom: 12px; }
+
+        .footer-nav a {
+            font-size: 14px;
+            color: var(--color-text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover { color: var(--color-accent); }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: var(--color-text-light);
+        }
+
+        .legal-disclaimer {
+            max-width: 700px;
+            margin: 24px auto 0;
+            text-align: center;
+        }
+
+        .legal-disclaimer p {
+            font-size: 12px;
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .featured-image-placeholder { height: 250px; }
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                text-align: center;
+            }
+            .footer-brand { max-width: 100%; }
+            .footer-social { justify-content: center; }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../images/logo (2).png" alt="Solo Mom Intentional" class="nav-logo-img">
+            </a>
+            <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../partners.html">Partners</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="../book.html" class="btn-book">Book a Session</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <a href="../blog.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Blog
+            </a>
+            <span class="category-badge">Fertility Planning</span>
+            <h1>The Complete Egg Freezing Guide for Professional Women: What to Know Before You Start</h1>
+            <div class="meta">
+                <span>January 18, 2026</span>
+                <span class="meta-divider"></span>
+                <span>9 min read</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="featured-image">
+        <div class="featured-image-placeholder">🥚</div>
+    </div>
+
+    <article>
+        <p>If you're a professional woman considering egg freezing, you're not alone. More women than ever are choosing to preserve their fertility while they focus on their careers, wait for the right partner, or simply want more time to make decisions about motherhood on their own terms.</p>
+
+        <p>But here's the challenge: despite its growing popularity, egg freezing can feel overwhelming. The medical terminology is confusing, the costs seem unclear, and it's hard to know where to even begin.</p>
+
+        <p>This guide breaks down everything you need to know about egg freezing—so you can make informed decisions with clarity and confidence.</p>
+
+        <h2>Why Professional Women Are Choosing Egg Freezing</h2>
+
+        <p>The decision to freeze your eggs is deeply personal, but for many professional women, it comes down to one thing: <strong>options</strong>.</p>
+
+        <p>Here's why women like you are making this choice:</p>
+
+        <ul>
+            <li><strong>Career timing</strong> — You're building something important, and you don't want to feel rushed into major life decisions</li>
+            <li><strong>Relationship uncertainty</strong> — You haven't found the right partner yet, but you know you want children someday</li>
+            <li><strong>Medical reasons</strong> — You're facing a health situation that could affect your fertility</li>
+            <li><strong>Peace of mind</strong> — You simply want the freedom to decide on your own timeline</li>
+        </ul>
+
+        <p>Whatever your reason, egg freezing gives you something invaluable: the ability to make decisions about motherhood when you're ready—not when biology forces your hand.</p>
+
+        <h2>Understanding the Egg Freezing Process</h2>
+
+        <p>Let's demystify what actually happens when you freeze your eggs.</p>
+
+        <h3>Step 1: Initial Consultation and Testing</h3>
+
+        <p>Your journey begins with a fertility consultation. Your doctor will likely order:</p>
+
+        <ul>
+            <li><strong>AMH (Anti-Müllerian Hormone) test</strong> — Measures your ovarian reserve</li>
+            <li><strong>Antral follicle count</strong> — An ultrasound to count the follicles in your ovaries</li>
+            <li><strong>FSH and estradiol levels</strong> — Additional hormone tests</li>
+        </ul>
+
+        <p>These tests help determine how your body might respond to stimulation medications and how many eggs you might expect to retrieve.</p>
+
+        <h3>Step 2: Ovarian Stimulation</h3>
+
+        <p>For about 10-14 days, you'll take hormone injections to stimulate your ovaries to produce multiple eggs (instead of the single egg your body typically releases each cycle).</p>
+
+        <p><strong>What to expect during this phase:</strong></p>
+
+        <ul>
+            <li>Daily or near-daily injections (self-administered at home)</li>
+            <li>Regular monitoring appointments (blood work and ultrasounds)</li>
+            <li>Some bloating and mild discomfort as your ovaries enlarge</li>
+            <li>Emotional fluctuations from the hormones</li>
+        </ul>
+
+        <h3>Step 3: Egg Retrieval</h3>
+
+        <p>Once your eggs are ready, you'll undergo a short outpatient procedure:</p>
+
+        <ul>
+            <li>The retrieval takes about 15-20 minutes</li>
+            <li>You'll be under light sedation (you won't feel anything)</li>
+            <li>Your doctor uses an ultrasound-guided needle to collect the eggs</li>
+            <li>Most women go home within an hour and rest for a day or two</li>
+        </ul>
+
+        <h3>Step 4: Vitrification (Flash Freezing)</h3>
+
+        <p>Your eggs are immediately frozen using vitrification—a flash-freezing technique that prevents ice crystals from forming. Vitrified eggs can be stored for years (and possibly decades) with high survival rates when thawed.</p>
+
+        <h2>How Many Eggs Should You Freeze?</h2>
+
+        <p>This is one of the most common questions—and the answer depends on several factors:</p>
+
+        <ul>
+            <li><strong>Your age at freezing</strong> — Younger eggs have higher success rates</li>
+            <li><strong>Your family-building goals</strong> — Do you want one child or multiple?</li>
+            <li><strong>Your ovarian reserve</strong> — Some women produce more eggs per cycle than others</li>
+        </ul>
+
+        <p><strong>General guidelines:</strong></p>
+
+        <table>
+            <tr>
+                <th>Age at Freezing</th>
+                <th>Eggs Recommended for One Child</th>
+            </tr>
+            <tr>
+                <td>Under 35</td>
+                <td>10-15 eggs</td>
+            </tr>
+            <tr>
+                <td>35-37</td>
+                <td>15-20 eggs</td>
+            </tr>
+            <tr>
+                <td>38-40</td>
+                <td>20-25 eggs</td>
+            </tr>
+            <tr>
+                <td>Over 40</td>
+                <td>25+ eggs (if possible)</td>
+            </tr>
+        </table>
+
+        <p>Many women require more than one retrieval cycle to reach their target number. This is completely normal.</p>
+
+        <h2>The Real Costs of Egg Freezing</h2>
+
+        <p>Let's talk numbers. Egg freezing is an investment, and it's important to understand the full picture:</p>
+
+        <p><strong>Typical costs include:</strong></p>
+
+        <ul>
+            <li><strong>Medication</strong> — $3,000-$6,000 per cycle</li>
+            <li><strong>Retrieval procedure</strong> — $5,000-$10,000 per cycle</li>
+            <li><strong>Annual storage fees</strong> — $500-$1,000 per year</li>
+            <li><strong>Future thawing and fertilization</strong> — Additional costs when you're ready to use your eggs</li>
+        </ul>
+
+        <p><strong>Ways to make it more manageable:</strong></p>
+
+        <ul>
+            <li>Check if your employer offers fertility benefits (increasingly common)</li>
+            <li>Look into fertility financing programs</li>
+            <li>Some clinics offer multi-cycle discounts</li>
+            <li>Consider your HSA or FSA for eligible expenses</li>
+        </ul>
+
+        <h2>What Nobody Tells You About Egg Freezing</h2>
+
+        <p>Beyond the medical facts, here's what women wish they'd known:</p>
+
+        <h3>The Emotional Side Is Real</h3>
+
+        <p>Even if you're confident in your decision, you might experience:</p>
+
+        <ul>
+            <li>Anxiety about whether it will "work"</li>
+            <li>Grief about not having a partner to do this with</li>
+            <li>Relief mixed with sadness</li>
+            <li>Frustration when friends and family don't understand</li>
+        </ul>
+
+        <p><strong>These feelings are normal.</strong> Consider finding a therapist who specializes in fertility, or connecting with other women who've been through it.</p>
+
+        <h3>Your Body Will Need Recovery Time</h3>
+
+        <p>Most women bounce back quickly, but give yourself grace:</p>
+
+        <ul>
+            <li>Take a few days off work if possible</li>
+            <li>Avoid intense exercise for 1-2 weeks</li>
+            <li>Stay hydrated and rest</li>
+            <li>Some bloating may last a week or more</li>
+        </ul>
+
+        <h3>It's Okay to Not Have All the Answers</h3>
+
+        <p>You don't need to know exactly when or how you'll use your eggs. Egg freezing is about preserving options—not committing to a specific plan.</p>
+
+        <h2>When Is the Right Time to Freeze Your Eggs?</h2>
+
+        <p>The short answer: <strong>sooner is generally better</strong> from a biological standpoint.</p>
+
+        <p>Egg quality and quantity decline with age, with the most significant drop occurring after 35. However, "the right time" is also about:</p>
+
+        <ul>
+            <li>Your emotional readiness</li>
+            <li>Your financial situation</li>
+            <li>Your life circumstances</li>
+        </ul>
+
+        <p>If you're thinking about it, don't wait years to start the conversation. Even getting your fertility tested gives you valuable information.</p>
+
+        <h2>Taking the Next Step</h2>
+
+        <p>If you're feeling overwhelmed by all this information, you're not alone. The fertility world is full of acronyms, medical jargon, and decisions that feel impossibly high-stakes.</p>
+
+        <p>That's exactly why having support matters.</p>
+
+        <p>Whether you're just starting to explore your options or you're ready to book your first appointment, talking to someone who's been through it can make all the difference. You deserve clarity, not confusion—and the confidence to make decisions that are right for <em>your</em> life.</p>
+
+        <hr>
+
+        <div class="cta-box">
+            <p><strong>Planning your fertility journey and feeling overwhelmed?</strong> Stay organized and confident with <a href="https://apps.apple.com/app/vizyplan" target="_blank" rel="noopener">VizyPlan</a>—the app that helps you track appointments, medications, and milestones all in one place. Download free on the App Store.</p>
+        </div>
+
+        <!-- Share Section -->
+        <div class="share-section">
+            <span class="share-label">Share this article:</span>
+            <div class="share-buttons">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=" class="share-btn" target="_blank" rel="noopener" aria-label="Share on Facebook">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                </a>
+                <a href="https://twitter.com/intent/tweet?url=&text=" class="share-btn" target="_blank" rel="noopener" aria-label="Share on X/Twitter">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=" class="share-btn" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <div class="article-footer">
+        <a href="../blog.html" class="back-button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to Blog
+        </a>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <p class="brand">Solo Mom Intentional</p>
+                    <p>Empowering professional women on their journey to solo motherhood with clarity, support, and real-life insight.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../about.html">About Lisa</a></li>
+                        <li><a href="../book.html">Book a Session</a></li>
+                        <li><a href="../partners.html">Partners</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <h4>Blog</h4>
+                    <ul>
+                        <li><a href="../blog.html">All Posts</a></li>
+                        <li><a href="../blog.html#fertility">Fertility Planning</a></li>
+                        <li><a href="../blog.html#donor">Donor Selection</a></li>
+                        <li><a href="../blog.html#career">Career & Motherhood</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Solo Mom Intentional. All rights reserved.</p>
+                <p>Made with love for Solo Moms by Choice</p>
+            </div>
+            <div class="legal-disclaimer">
+                <p><strong>Legal Disclaimer:</strong> This session provides personal experience–based guidance and general educational support. It is not medical, legal, or psychological advice. Always consult a licensed healthcare provider for clinical decisions.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

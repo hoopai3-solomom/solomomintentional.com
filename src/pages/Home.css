@@ -1,0 +1,335 @@
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-blush) 50%, var(--color-rose) 100%);
+  padding: 80px 24px 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 60%);
+  animation: float 20s ease-in-out infinite;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.hero-logo {
+  max-width: 500px;
+  width: 90%;
+  height: auto;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.2s forwards;
+}
+
+.hero-subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-text-light);
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.4s forwards;
+}
+
+/* Cards Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 36px;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-rose), var(--color-sage));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card h2 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.card p {
+  font-size: 15px;
+  color: var(--color-text-light);
+  line-height: 1.7;
+}
+
+.card-subheading {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-accent);
+  margin: 24px 0 12px;
+}
+
+.card-note {
+  background: var(--color-sage-light);
+  padding: 16px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--color-text);
+  margin-top: 20px;
+  border-left: 3px solid var(--color-sage);
+}
+
+.card-highlight {
+  background: linear-gradient(135deg, var(--color-cream) 0%, white 100%);
+  padding: 16px 20px;
+  border-radius: 10px;
+  margin-top: 16px;
+}
+
+.card-highlight p {
+  font-size: 13px;
+  font-style: italic;
+}
+
+/* Benefits List */
+.benefits-list {
+  list-style: none;
+  margin-top: 16px;
+}
+
+.benefits-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: var(--color-text-light);
+}
+
+.benefits-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-sage);
+  font-weight: 700;
+}
+
+/* Session Highlight Card */
+.session-highlight {
+  grid-column: span 2;
+}
+
+/* Agenda Card */
+.agenda-card {
+  grid-column: span 2;
+}
+
+.agenda-item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--color-cream);
+}
+
+.agenda-item:last-of-type {
+  border-bottom: none;
+}
+
+.agenda-time {
+  min-width: 70px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-accent);
+  background: var(--color-blush);
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-align: center;
+  height: fit-content;
+}
+
+.agenda-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.agenda-content p {
+  font-size: 14px;
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+.agenda-topics {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.agenda-topics li {
+  font-size: 13px;
+  color: var(--color-text);
+  background: var(--color-sage-light);
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, var(--color-text) 0%, #2a2a2a 100%);
+  color: white;
+  border-radius: var(--radius);
+  padding: 60px 40px;
+  margin-top: 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.cta-testimonial {
+  flex: 1;
+  max-width: 280px;
+  text-align: center;
+}
+
+.cta-testimonial-text {
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.cta-testimonial-author {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 500;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+  flex: 1.2;
+  max-width: 400px;
+}
+
+.cta-section h2 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.cta-section > .cta-content > p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 32px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 18px 48px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text);
+  background: white;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .session-highlight,
+  .agenda-card {
+    grid-column: span 1;
+  }
+
+  .hero {
+    padding: 60px 20px 80px;
+  }
+
+  .card {
+    padding: 28px;
+  }
+
+  .cta-section {
+    padding: 50px 30px;
+    flex-direction: column;
+  }
+
+  .cta-testimonial {
+    display: none;
+  }
+}

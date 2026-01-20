@@ -1,372 +1,515 @@
-// Blog Post Interface
 export interface BlogPost {
   slug: string;
   title: string;
-  date: string; // YYYY-MM-DD format
-  readTime: string;
-  category: string;
-  image: string;
   excerpt: string;
-  content: string; // Markdown string
+  content: string;
+  category: 'fertility' | 'donor' | 'career' | 'mindset' | 'community' | 'selfcare';
+  publishedAt: string;
+  readTime: number;
+  emoji: string;
 }
 
-// Blog Posts Data
-export const blogPosts: BlogPost[] = [
+export const posts: BlogPost[] = [
   {
-    slug: 'embracing-intentional-solo-parenting',
-    title: 'Embracing Intentional Solo Parenting: Your Journey Starts Here',
-    date: '2026-01-15',
-    readTime: '5 min read',
-    category: 'Mindset',
-    image: '/images/blog/intentional-parenting.jpg',
-    excerpt: 'Discover how shifting your mindset from survival mode to intentional living can transform your experience as a solo mom.',
+    slug: 'egg-freezing-guide-professional-women',
+    title: 'The Complete Egg Freezing Guide for Professional Women',
+    excerpt: 'Everything professional women need to know about egg freezing—from timing and costs to what to expect during the process.',
+    category: 'fertility',
+    publishedAt: '2026-01-18',
+    readTime: 9,
+    emoji: '🥚',
     content: `
-# Embracing Intentional Solo Parenting: Your Journey Starts Here
+# The Complete Egg Freezing Guide for Professional Women
 
-Being a solo mom isn't just about getting through each day—it's about creating a life filled with purpose, joy, and meaningful connections with your children.
+Egg freezing (oocyte cryopreservation) has become an increasingly popular option for professional women who want to preserve their fertility while focusing on their careers. As someone who has been through this journey, I want to share everything you need to know.
 
-## What Does Intentional Parenting Mean?
+## Why Consider Egg Freezing?
 
-Intentional parenting is about making conscious choices that align with your values and the life you want to build for your family. It's moving from reactive to proactive, from surviving to thriving.
+For many professional women, the timing of motherhood doesn't always align with biological realities. Egg freezing allows you to:
 
-### Key Principles of Intentional Solo Parenting
+- **Preserve your fertility** while you build your career
+- **Reduce anxiety** about the "biological clock"
+- **Give yourself options** for the future
+- **Make decisions on your timeline**, not biology's
 
-1. **Define Your Values** - What matters most to you and your family?
-2. **Set Clear Intentions** - Start each day with purpose
-3. **Create Meaningful Rituals** - Build connection through consistency
-4. **Practice Self-Compassion** - You're doing better than you think
+## The Best Age to Freeze Your Eggs
 
-## Taking the First Step
+While egg freezing can be done at various ages, timing matters significantly:
 
-The journey of a thousand miles begins with a single step. Today, I invite you to pause and ask yourself: *What kind of home do I want to create for my children?*
+### Under 35
+This is considered the optimal window. Your eggs are typically higher quality, and you'll likely need fewer cycles to retrieve an adequate number of eggs.
 
-> "You don't have to be perfect to be an intentional parent. You just have to be present."
+### 35-37
+Still a good time, though you may need 2 cycles to achieve the recommended number of eggs (15-20 for best outcomes).
 
-Remember, intentional parenting isn't about doing more—it's about doing what matters with awareness and love.
-    `.trim(),
+### 38-40
+More challenging but still possible. Expect to need multiple cycles and be prepared for potentially lower egg quality.
+
+### 40+
+Success rates decline significantly, but it's not impossible. Have an honest conversation with your reproductive endocrinologist about expectations.
+
+## What to Expect During the Process
+
+### Step 1: Initial Consultation
+Your fertility specialist will review your medical history, perform blood tests (AMH, FSH, estradiol), and conduct a transvaginal ultrasound to assess your ovarian reserve.
+
+### Step 2: Hormone Stimulation
+You'll inject fertility medications for 10-14 days to stimulate your ovaries to produce multiple eggs. Common medications include:
+- Gonal-F or Follistim (FSH)
+- Menopur (FSH + LH)
+- Cetrotide or Ganirelix (to prevent premature ovulation)
+
+### Step 3: Monitoring
+Expect frequent monitoring appointments (every 2-3 days) for blood work and ultrasounds to track follicle development.
+
+### Step 4: Trigger Shot
+When your follicles reach the right size (18-20mm), you'll take a "trigger shot" to mature the eggs.
+
+### Step 5: Egg Retrieval
+About 36 hours after the trigger shot, you'll undergo a brief outpatient procedure under sedation. It takes about 15-20 minutes.
+
+### Step 6: Vitrification
+Your eggs are flash-frozen using vitrification, a rapid-freezing technique that prevents ice crystal formation.
+
+## Cost Breakdown
+
+Egg freezing costs vary by location and clinic, but here's a general breakdown:
+
+| Component | Cost Range |
+|-----------|------------|
+| Consultation & Testing | $500-1,500 |
+| Medications | $3,000-6,000 |
+| Egg Retrieval Procedure | $6,000-12,000 |
+| Annual Storage | $500-1,000/year |
+
+**Total per cycle: $10,000-$20,000**
+
+Many women need 2 cycles to retrieve enough eggs (15-20 recommended).
+
+## Tips for Professional Women
+
+### Work Considerations
+- Schedule your retrieval for a Friday when possible
+- You may need 3-5 days of limited activity after retrieval
+- Morning monitoring appointments are common; plan your schedule accordingly
+
+### Self-Care During the Process
+- Stay hydrated (especially after retrieval)
+- Avoid strenuous exercise during stimulation
+- Wear comfortable, loose-fitting clothes
+- Have support lined up for retrieval day
+
+### Emotional Preparation
+- This process can be emotionally taxing
+- Consider joining a support group or connecting with other women who've been through it
+- Give yourself grace—this is a big decision and a lot to handle
+
+## Questions to Ask Your Doctor
+
+1. What is your clinic's freeze/thaw survival rate?
+2. How many eggs do you recommend I freeze based on my age and test results?
+3. What happens if I don't respond well to medications?
+4. What are the risks of the procedure?
+5. How long can eggs remain frozen?
+
+## The Bottom Line
+
+Egg freezing isn't a guarantee, but it's a powerful option for taking control of your fertility timeline. The technology has improved dramatically, and survival rates after thawing are now 90-95% at top clinics.
+
+If you're considering this path, I encourage you to start the conversation with a fertility specialist sooner rather than later. Knowledge is power, and understanding your options is the first step toward making the right decision for your future.
+
+---
+
+*Ready to discuss your fertility journey? [Book a session](/book) with me to get personalized guidance and support.*
+    `
   },
   {
-    slug: 'building-your-support-network',
-    title: 'Building Your Support Network as a Solo Mom',
-    date: '2026-01-08',
-    readTime: '7 min read',
-    category: 'Community',
-    image: '/images/blog/support-network.jpg',
-    excerpt: 'Learn practical strategies for creating a strong support system that helps you and your children thrive.',
+    slug: 'how-to-choose-sperm-donor-solo-mom',
+    title: "How to Choose a Sperm Donor: A Solo Mom's Guide",
+    excerpt: 'Navigating sperm donor selection as a Solo Mom by Choice—from understanding donor types to the questions that really matter.',
+    category: 'donor',
+    publishedAt: '2026-01-12',
+    readTime: 11,
+    emoji: '🔍',
     content: `
-# Building Your Support Network as a Solo Mom
+# How to Choose a Sperm Donor: A Solo Mom's Guide
 
-One of the biggest challenges solo moms face is the feeling of isolation. But here's the truth: you don't have to do this alone.
+Choosing a sperm donor is one of the most significant decisions you'll make on your solo motherhood journey. It can feel overwhelming, emotional, and surprisingly complicated. As someone who's been through this process, I want to help you navigate it with clarity and confidence.
 
-## Why Community Matters
+## Types of Sperm Donors
 
-Research shows that solo parents with strong support networks experience:
-- Lower stress levels
-- Better mental health
-- More resilient children
-- Greater life satisfaction
+### Anonymous Donors
+- Identity is not disclosed to you or your child
+- You receive basic information (physical characteristics, education, some health history)
+- Less common now as many organizations move toward open donation
 
-## Types of Support to Cultivate
+### Open-ID (Identity-Release) Donors
+- Donor agrees to have their identity released when the child turns 18
+- Your child can choose whether to contact them
+- Increasingly popular and often recommended by fertility counselors
 
-### Emotional Support
-Friends and family who listen without judgment and celebrate your wins.
+### Known Donors
+- Someone you know personally (friend, acquaintance)
+- Requires legal agreements and often counseling
+- More complex emotionally and legally, but some prefer this approach
 
-### Practical Support
-People who can help with childcare, errands, or emergencies.
+### Directed Donors
+- Similar to known donors but facilitated through a sperm bank
+- Goes through the same screening as anonymous donors
+
+## What to Consider When Choosing
+
+### Medical History
+This is arguably the most important factor. Look for:
+- **Complete family medical history** (at least 3 generations)
+- **Genetic testing results** (most reputable banks test for 200+ genetic conditions)
+- **No significant hereditary conditions** in the family
+- **Mental health history** (ask about depression, anxiety, addiction in the family)
+
+### Physical Characteristics
+Many women want a donor who resembles them or their family. Consider:
+- Hair color and texture
+- Eye color
+- Height and build
+- Ethnic background
+
+*Remember: genetics are unpredictable. Your child may or may not resemble the donor's described characteristics.*
+
+### Education and Interests
+Some banks provide detailed profiles including:
+- Educational background
+- Career or career goals
+- Hobbies and interests
+- Why they decided to donate
+
+### Personality Assessments
+Look for donors who have completed:
+- Staff impressions (bank employees' observations)
+- Audio or video recordings
+- Written responses to essay questions
+- Personality inventories
+
+## Questions to Ask Yourself
+
+Before browsing donor profiles, reflect on these questions:
+
+1. **How important is genetic connection to me?**
+2. **Do I want my child to have the option to contact their donor?**
+3. **What characteristics am I hoping for, and why?**
+4. **Am I comfortable with uncertainty?** (your child will be their own person)
+5. **Have I thought about how I'll explain this to my child?**
+
+## The Selection Process: Step by Step
+
+### Step 1: Choose Your Sperm Bank(s)
+Research reputable banks. Top options include:
+- California Cryobank
+- Seattle Sperm Bank
+- Fairfax Cryobank
+- Cryobio
+- European Sperm Bank
+
+Look for banks that:
+- Have extensive genetic testing
+- Offer detailed donor profiles
+- Have good freeze/thaw rates
+- Limit pregnancies per donor
+- Have clear policies on donor-sibling contact
+
+### Step 2: Set Your Criteria
+Create a list of must-haves vs. nice-to-haves:
+
+**Must-haves might include:**
+- Clean genetic testing
+- Open-ID donor
+- No family history of specific conditions
+
+**Nice-to-haves might include:**
+- Certain hair/eye color
+- Specific educational background
+- Similar hobbies to yours
+
+### Step 3: Review Profiles
+Most banks charge a fee ($100-300) to access detailed profiles. This gives you:
+- Baby photos
+- Audio recordings
+- Extended health history
+- Staff impressions
+- Essay responses
+
+### Step 4: Narrow Your List
+Pick your top 3-5 donors and sit with your choices. Some women:
+- Share profiles with trusted friends or family
+- Sleep on decisions for a few days
+- Consult with a therapist or counselor
+
+### Step 5: Consider Logistics
+- **Availability:** Is the donor currently active?
+- **Inventory:** How many vials are available?
+- **Reserving vials:** Can you purchase extra for siblings?
+- **Cost:** Vials range from $600-1,200+ each
+
+## Red Flags to Watch For
+
+Be cautious if a sperm bank:
+- Has incomplete genetic testing
+- Doesn't limit pregnancies per donor
+- Has no process for medical updates from donors
+- Lacks transparency about their screening process
+- Pressures you to decide quickly
+
+## Thinking About Your Future Child
+
+### Donor Siblings
+Many children conceived through donor sperm are curious about half-siblings. Consider:
+- Does the bank facilitate sibling contact?
+- Are you open to connecting with other families?
+- How will you approach this conversation with your child?
+
+### Identity Questions
+Your child may have questions about their donor. Prepare yourself:
+- Many experts recommend being open from an early age
+- Children's books exist to help explain donor conception
+- Therapy can help you develop language that feels right
+
+### The Donor Sibling Registry
+This organization helps donor-conceived people connect with half-siblings and sometimes donors. Many families find it valuable.
+
+## My Personal Tips
+
+1. **Don't aim for perfect.** There is no perfect donor, just as there's no perfect partner.
+
+2. **Trust your instincts.** If something feels off about a donor, move on.
+
+3. **Consider the long term.** Open-ID donors give your child options they may value later.
+
+4. **Buy extra vials.** If you want the option for siblings, purchase additional vials now.
+
+5. **Get support.** This decision is emotional. Lean on your community, therapist, or support groups.
+
+6. **Remember what matters most.** Your love, stability, and commitment to your child matter far more than any donor characteristic.
+
+## The Bottom Line
+
+Choosing a sperm donor is deeply personal. There's no universal "right" answer—only what's right for you and your future family. Take your time, gather information, and trust yourself.
+
+You've already shown incredible courage and intentionality by choosing this path. That same thoughtfulness will guide you to the right decision.
+
+---
+
+*Feeling overwhelmed by donor selection? [Book a session](/book) with me to talk through your questions and concerns.*
+    `
+  },
+  {
+    slug: 'balancing-career-solo-motherhood-professional-women',
+    title: 'Balancing a Demanding Career with Solo Motherhood',
+    excerpt: 'Practical strategies for professional women navigating solo motherhood while maintaining their careers—without sacrificing their sanity.',
+    category: 'career',
+    publishedAt: '2026-01-05',
+    readTime: 10,
+    emoji: '💼',
+    content: `
+# Balancing a Demanding Career with Solo Motherhood
+
+Let's be honest: balancing a demanding career with solo motherhood isn't easy. There's no partner to share the load, no one to tag in when you're exhausted. But it's absolutely possible—and many women are thriving in both roles. Here's what I've learned about making it work.
+
+## Redefining "Balance"
+
+First, let's throw out the idea of perfect balance. Some weeks, work will demand more. Other weeks, your child will need extra attention. Balance isn't about equal time—it's about being present and effective wherever you are.
+
+### The Real Goal
+- **Sustainability** over perfection
+- **Presence** over quantity
+- **Systems** over constant decision-making
+- **Grace** over guilt
+
+## Building Your Support System
+
+As a solo mom, your support system isn't optional—it's essential.
+
+### Childcare
+This is your most critical investment. Options to consider:
+- **Nanny:** Most flexibility, highest cost, one-on-one care
+- **Daycare:** More affordable, built-in socialization, fixed hours
+- **Au pair:** Live-in help, cultural exchange, good for odd hours
+- **Family help:** If available, invaluable (but set boundaries)
+
+**Pro tip:** Always have backup childcare arranged. Sick days, vacation, and emergencies happen.
+
+### Your Village
+Build relationships with:
+- Other parents (for playdates and emergency backup)
+- Neighbors you trust
+- Hired help (housekeepers, meal prep services, etc.)
+- Your employer's EAP (Employee Assistance Program)
 
 ### Professional Support
-Coaches, therapists, and mentors who guide your personal growth.
+Consider investing in:
+- A good therapist or coach
+- A financial advisor who understands single-parent finances
+- A network of other working solo moms
 
-### Community Support
-Groups of people who understand your journey because they're on it too.
+## Career Strategies That Work
 
-## Practical Steps to Build Your Network
+### Be Strategic About Your Employer
 
-1. **Start with who you have** - Strengthen existing relationships
-2. **Join local groups** - Look for solo parent meetups
-3. **Connect online** - Find supportive communities
-4. **Ask for help** - It's a strength, not a weakness
-5. **Give back** - Supporting others builds reciprocal relationships
+Not all workplaces are created equal for single parents. Look for:
+- **Flexible work arrangements** (remote options, flexible hours)
+- **Generous PTO** and sick leave
+- **Dependent care FSA** options
+- **Understanding culture** around family commitments
+- **Results-oriented** (not face-time focused)
 
-Remember: Building community takes time. Start small, be consistent, and watch your network grow.
-    `.trim(),
-  },
-  {
-    slug: 'self-care-strategies-busy-moms',
-    title: 'Self-Care Strategies That Actually Work for Busy Solo Moms',
-    date: '2025-12-28',
-    readTime: '6 min read',
-    category: 'Self-Care',
-    image: '/images/blog/self-care.jpg',
-    excerpt: 'Forget bubble baths—these realistic self-care practices fit into your busy schedule and make a real difference.',
-    content: `
-# Self-Care Strategies That Actually Work for Busy Solo Moms
+If you're job searching, ask about these policies. If you're staying put, advocate for what you need.
 
-Let's be honest: as a solo mom, you probably rolled your eyes at the last "self-care" article that suggested a spa day. When do you have time for that?
+### Communicate Proactively
 
-## Redefining Self-Care
+You don't have to disclose your family status, but strategic transparency can help:
+- Let your manager know you're most productive in [morning/afternoon] and prefer meetings then
+- Give advance notice for predictable conflicts (pediatrician appointments, school events)
+- Build trust through consistent delivery so you have capital for unexpected situations
 
-Self-care isn't about luxury—it's about sustainability. It's the daily practices that keep you functioning at your best so you can show up for your kids.
+### Protect Your Time
 
-## Micro Self-Care Moments
+Learn to:
+- **Say no** to non-essential commitments
+- **Batch similar tasks** for efficiency
+- **Block focused work time** on your calendar
+- **Delegate** everything that doesn't require you specifically
 
-### 5-Minute Practices
-- Deep breathing while kids are occupied
-- Stretching during cartoon time
-- Savoring your morning coffee mindfully
+### Build Your Professional Brand
 
-### 15-Minute Resets
-- Quick walk around the block
-- Journaling three things you're grateful for
-- A short meditation or prayer
+You may not be able to do happy hours or late-night work sessions, but you can:
+- Deliver exceptional work consistently
+- Be responsive during your working hours
+- Build relationships through one-on-one coffees or lunches
+- Contribute meaningfully in meetings
+- Document your achievements
 
-### Weekly Non-Negotiables
-- One activity just for you
-- Connection with a friend (even by text)
-- Something that makes you laugh
+## Practical Daily Strategies
 
-## The Permission Slip You Need
+### Mornings
+- Prepare everything possible the night before
+- Wake up 30 minutes before your child for quiet time
+- Have a consistent routine (kids thrive on predictability)
+- Build in buffer time (things always take longer)
 
-You have permission to:
-- Rest without guilt
-- Say no to things that drain you
-- Ask for help when you need it
-- Prioritize your wellbeing
+### Workdays
+- Identify your highest-energy hours for your most important work
+- Use commute time productively (podcasts, calls, mental planning)
+- Eat lunch—don't skip meals
+- Set a hard stop time and protect it
 
-> "You cannot pour from an empty cup. Taking care of yourself isn't selfish—it's necessary."
+### Evenings
+- Have simple, reliable dinner options (meal prep, easy recipes)
+- Create a bedtime routine you can stick to
+- Put your phone away during quality time
+- Prepare for the next day before you relax
 
-## Creating Your Self-Care Plan
+### Weekends
+- Don't try to do everything
+- Choose one outing or activity, not five
+- Rest is productive
+- Involve your child in chores when age-appropriate
 
-1. Identify what truly refreshes you
-2. Schedule it like an important appointment
-3. Start with just one new practice
-4. Build from there
+## Managing Mom Guilt
 
-Your children learn self-care by watching you practice it. Model the balance you want them to have.
-    `.trim(),
-  },
-  {
-    slug: 'financial-wellness-solo-moms',
-    title: 'Financial Wellness: Taking Control of Your Money Story',
-    date: '2025-12-15',
-    readTime: '8 min read',
-    category: 'Finance',
-    image: '/images/blog/financial-wellness.jpg',
-    excerpt: 'Practical financial strategies and mindset shifts to help you build security and confidence as a solo parent.',
-    content: `
-# Financial Wellness: Taking Control of Your Money Story
+Mom guilt is real, especially for solo moms who work. Here's how to manage it:
 
-Money stress is real for solo moms. But financial wellness isn't just about how much you have—it's about how you relate to what you have.
+### Reframe Your Thinking
+- You're modeling ambition and resilience for your child
+- Quality of time matters more than quantity
+- Your child benefits from a fulfilled, financially stable parent
+- Working mothers raise successful children
 
-## Shifting Your Money Mindset
+### Practice Self-Compassion
+- You're doing something incredibly hard
+- You will make mistakes—everyone does
+- Your child needs a "good enough" parent, not a perfect one
+- Comparison is the thief of joy
 
-Before we talk strategy, let's address mindset. Many solo moms carry shame or fear around money. It's time to release that.
+### Create Connection Rituals
+Even small moments of connection make a difference:
+- Special breakfast conversations
+- Bedtime stories and cuddles
+- Weekend cooking together
+- Regular one-on-one activities
 
-### Affirmations for Financial Wellness
-- I am capable of managing my finances
-- I create security for my family
-- I am worthy of financial peace
-- Every small step matters
+## Financial Considerations
 
-## Practical Strategies
+Solo motherhood means you're the sole provider. Plan accordingly:
 
-### Track Everything
-You can't improve what you don't measure. Start with awareness.
+### Emergency Fund
+Aim for 6-12 months of expenses (more than typical advice, because you don't have a partner's income as backup).
 
-### Build Your Buffer
-Even $500 can provide peace of mind. Start where you are.
+### Disability and Life Insurance
+Essential when you're the only provider. Don't skip this.
 
-### Reduce Decision Fatigue
-Automate what you can—savings, bills, investments.
+### Career Growth
+Continue investing in your career:
+- Pursue promotions and raises
+- Maintain your network
+- Update your skills
+- Have a contingency plan
 
-### Increase Your Value
-Invest in skills that increase your earning potential.
+### Childcare as Investment
+Quality childcare enables your career. Think of it as an investment, not just an expense.
 
-## Resources for Solo Moms
+## When It Gets Hard
 
-- Local assistance programs
-- Community resources
-- Financial literacy classes
-- Coaching and support groups
+Some days (weeks, months) will be harder than others. When you're struggling:
 
-## Your Money Story
+### Ask for Help
+Pride has no place in solo motherhood. Ask for what you need.
 
-What narrative do you tell yourself about money? Is it serving you?
+### Lower Your Standards
+A frozen pizza dinner and skipped bath night won't damage your child.
 
-Consider rewriting your story:
-- From: "I'll never have enough"
-- To: "I'm building security one day at a time"
+### Take Sick Days
+You can't pour from an empty cup. Rest when you need to.
 
-Financial wellness is a journey. Be patient with yourself, celebrate small wins, and keep moving forward.
-    `.trim(),
-  },
-  {
-    slug: 'creating-meaningful-traditions',
-    title: 'Creating Meaningful Family Traditions on a Solo Mom Budget',
-    date: '2025-12-01',
-    readTime: '5 min read',
-    category: 'Family Life',
-    image: '/images/blog/family-traditions.jpg',
-    excerpt: 'Discover how to build lasting memories and strong bonds with your children through simple, meaningful traditions.',
-    content: `
-# Creating Meaningful Family Traditions on a Solo Mom Budget
+### Connect with Other Solo Moms
+No one understands like someone who's been there.
 
-Some of the most cherished family traditions cost nothing at all. It's not about what you spend—it's about the intention behind it.
+### Remember Your Why
+You chose this. You wanted this. And you're doing it.
 
-## Why Traditions Matter
+## The Gifts of Solo Motherhood
 
-Family traditions:
-- Create a sense of belonging
-- Build emotional security
-- Strengthen family identity
-- Create lasting memories
+It's not all challenges. Solo motherhood also brings:
+- **Deep bond** with your child
+- **Decision-making freedom** (no co-parent disagreements)
+- **Simplified logistics** (one household, one schedule)
+- **Modeling independence** for your child
+- **Knowing you can handle anything**
 
-## Simple Tradition Ideas
+## The Bottom Line
 
-### Daily Rituals
-- Morning affirmations together
-- Gratitude at dinner
-- Bedtime story or reflection
-- Weekly movie night with popcorn
+Balancing a career with solo motherhood requires intention, systems, support, and grace. You won't do it perfectly—no one does. But you can do it well, raising a loved child while building a meaningful career.
 
-### Seasonal Celebrations
-- First day of each season nature walk
-- Birthday breakfast in bed tradition
-- New Year's vision board making
-- Summer solstice picnic
+The fact that you're reading this means you're already approaching motherhood with thought and intentionality. That mindset will serve you well.
 
-### Special Occasion Markers
-- Annual photo in the same spot
-- Time capsule additions
-- Memory jar contributions
-- Milestone celebrations
+---
 
-## Making Traditions Your Own
-
-The best traditions are ones that:
-1. **Fit your family's interests** - What do you all enjoy?
-2. **Are sustainable** - Can you actually do this regularly?
-3. **Allow for flexibility** - Traditions can evolve
-4. **Create connection** - The goal is togetherness
-
-## Starting Your Tradition Today
-
-Pick one small tradition to start this week. It doesn't have to be elaborate. Maybe it's:
-- Taco Tuesday
-- Sunday morning dance party
-- Friday night gratitude sharing
-
-> "The magic isn't in the activity—it's in the consistency and love you bring to it."
-
-What tradition will you create with your family?
-    `.trim(),
-  },
-  {
-    slug: 'navigating-co-parenting-challenges',
-    title: 'Navigating Co-Parenting Challenges with Grace',
-    date: '2025-11-18',
-    readTime: '7 min read',
-    category: 'Co-Parenting',
-    image: '/images/blog/co-parenting.jpg',
-    excerpt: 'Strategies for maintaining peace and prioritizing your children\'s wellbeing in co-parenting situations.',
-    content: `
-# Navigating Co-Parenting Challenges with Grace
-
-Co-parenting isn't always easy, but with the right mindset and tools, you can create a peaceful environment for your children to thrive.
-
-## The Foundation: Your Children's Wellbeing
-
-Every co-parenting decision should pass through this filter: *What's best for my children?*
-
-This doesn't mean:
-- Sacrificing your boundaries
-- Accepting disrespect
-- Agreeing with everything
-
-It does mean:
-- Keeping adult conflicts away from kids
-- Supporting their relationship with both parents
-- Communicating respectfully when possible
-
-## Communication Strategies
-
-### Keep It Brief
-Stick to logistics and child-related topics.
-
-### Keep It Informative
-Share relevant information about the kids.
-
-### Keep It Friendly
-A neutral, professional tone works best.
-
-### Keep It Firm
-Maintain your boundaries consistently.
-
-## Managing Difficult Emotions
-
-It's normal to feel frustrated, hurt, or angry. What matters is how you handle those feelings:
-
-1. **Process privately** - Vent to friends, not your kids
-2. **Take breaks** - Step away before responding when upset
-3. **Focus on what you can control** - Your reactions, your home, your choices
-4. **Seek support** - Therapy or coaching can help
-
-## When Co-Parenting Is High-Conflict
-
-Sometimes, despite your best efforts, conflict continues. In these cases:
-- Document everything
-- Use written communication
-- Consider a parenting coordinator
-- Prioritize parallel parenting over co-parenting
-
-## Finding Peace
-
-You may not be able to change your co-parent, but you can:
-- Control your responses
-- Create peace in your home
-- Model healthy relationships for your children
-- Focus on being the best parent you can be
-
-Your children don't need perfect co-parenting. They need to see you handling challenges with grace.
-    `.trim(),
-  },
+*Need help preparing for solo motherhood while managing your career? [Book a session](/book) with me for personalized support and strategies.*
+    `
+  }
 ];
 
-// Helper Functions
-
-/**
- * Get a single blog post by its slug
- * @param slug - The URL-friendly identifier for the post
- * @returns The blog post if found, undefined otherwise
- */
 export function getPostBySlug(slug: string): BlogPost | undefined {
-  return blogPosts.find((post) => post.slug === slug);
+  return posts.find(post => post.slug === slug);
 }
 
-/**
- * Get all blog posts sorted by date (newest first)
- * @returns Array of blog posts sorted by date descending
- */
 export function getAllPosts(): BlogPost[] {
-  return [...blogPosts].sort((a, b) => {
-    return new Date(b.date).getTime() - new Date(a.date).getTime();
-  });
+  return posts.sort((a, b) =>
+    new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  );
 }
 
-/**
- * Get posts filtered by category
- * @param category - The category to filter by
- * @returns Array of blog posts in the specified category, sorted by date
- */
-export function getPostsByCategory(category: string): BlogPost[] {
-  return getAllPosts().filter((post) => post.category === category);
-}
-
-/**
- * Get all unique categories from blog posts
- * @returns Array of unique category strings
- */
-export function getAllCategories(): string[] {
-  const categories = blogPosts.map((post) => post.category);
-  return [...new Set(categories)].sort();
+export function getPostsByCategory(category: BlogPost['category']): BlogPost[] {
+  return posts
+    .filter(post => post.category === category)
+    .sort((a, b) =>
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+    );
 }

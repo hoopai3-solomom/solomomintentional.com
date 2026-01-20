@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo Mom by Choice | Egg Freezing, IVF, Donor Sperm & PGT-A Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #FBF9F7;
+            --color-cream: #F5F0EB;
+            --color-blush: #E8D5D0;
+            --color-rose: #C9A9A6;
+            --color-sage: #9CAF96;
+            --color-sage-light: #E8EFE6;
+            --color-lavender: #E8E4F0;
+            --color-lavender-dark: #C9C1D9;
+            --color-text: #3D3D3D;
+            --color-text-light: #6B6B6B;
+            --color-accent: #B67B6B;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Nunito Sans', -apple-system, sans-serif;
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.06);
+            --shadow-medium: 0 8px 30px rgba(0,0,0,0.08);
+            --shadow-hover: 0 12px 40px rgba(0,0,0,0.12);
+            --radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* Navigation */
+        .nav {
+            background: var(--color-lavender);
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--color-text);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            opacity: 0.8;
+        }
+
+        .nav-logo-img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--color-text);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.6);
+            color: var(--color-accent);
+        }
+
+        .nav-links .btn-book {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .nav-links .btn-book:hover {
+            background: #a36a5a;
+            color: white;
+        }
+
+        /* Mobile Nav */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--color-text);
+            margin: 6px 0;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--color-lavender);
+                flex-direction: column;
+                padding: 16px 24px;
+                gap: 8px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 12px 16px;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-blush) 50%, var(--color-rose) 100%);
+            padding: 80px 24px 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 60%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(30px, 30px) rotate(180deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-label {
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 24px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 500;
+            line-height: 1.2;
+            color: var(--color-text);
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.2s forwards;
+        }
+
+        .hero-logo {
+            max-width: 500px;
+            width: 90%;
+            height: auto;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.2s forwards;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-display);
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+            font-weight: 400;
+            font-style: italic;
+            color: var(--color-text-light);
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.4s forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 36px;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-rose), var(--color-sage));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card h2 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .card-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--color-cream);
+        }
+
+        .card-item:last-child {
+            border-bottom: none;
+        }
+
+        .card-item-label {
+            font-size: 14px;
+            color: var(--color-text-light);
+        }
+
+        .card-item-value {
+            font-weight: 600;
+            color: var(--color-text);
+            font-size: 14px;
+        }
+
+        .card-subheading {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--color-accent);
+            margin: 24px 0 12px;
+        }
+
+        .card p {
+            font-size: 15px;
+            color: var(--color-text-light);
+            line-height: 1.7;
+        }
+
+        .card-note {
+            background: var(--color-sage-light);
+            padding: 16px 20px;
+            border-radius: 10px;
+            font-size: 14px;
+            color: var(--color-text);
+            margin-top: 20px;
+            border-left: 3px solid var(--color-sage);
+        }
+
+        .card-highlight {
+            background: linear-gradient(135deg, var(--color-cream) 0%, white 100%);
+            padding: 16px 20px;
+            border-radius: 10px;
+            margin-top: 16px;
+        }
+
+        .card-highlight p {
+            font-size: 13px;
+            font-style: italic;
+        }
+
+        /* Benefits List */
+        .benefits-list {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .benefits-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            font-size: 15px;
+            color: var(--color-text-light);
+        }
+
+        .benefits-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-sage);
+            font-weight: 700;
+        }
+
+        /* Session Highlight Card */
+        .session-highlight {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 768px) {
+            .session-highlight {
+                grid-column: span 1;
+            }
+        }
+
+        /* Agenda Card */
+        .agenda-card {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 768px) {
+            .agenda-card {
+                grid-column: span 1;
+            }
+        }
+
+        .agenda-item {
+            display: flex;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--color-cream);
+        }
+
+        .agenda-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .agenda-time {
+            min-width: 70px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--color-accent);
+            background: var(--color-blush);
+            padding: 8px 12px;
+            border-radius: 8px;
+            text-align: center;
+            height: fit-content;
+        }
+
+        .agenda-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: 8px;
+        }
+
+        .agenda-content p {
+            font-size: 14px;
+            color: var(--color-text-light);
+            margin: 0;
+        }
+
+        .agenda-topics {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .agenda-topics li {
+            font-size: 13px;
+            color: var(--color-text);
+            background: var(--color-sage-light);
+            padding: 6px 14px;
+            border-radius: 20px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--color-text) 0%, #2a2a2a 100%);
+            color: white;
+            border-radius: var(--radius);
+            padding: 60px 40px;
+            margin-top: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .cta-testimonial {
+            flex: 1;
+            max-width: 280px;
+            text-align: center;
+        }
+
+        .cta-testimonial-text {
+            font-family: 'Caveat', cursive;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .cta-testimonial-author {
+            font-family: var(--font-body);
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
+            font-weight: 500;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            flex: 1.2;
+            max-width: 400px;
+        }
+
+        .cta-section h2 {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 32px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 48px;
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--color-text);
+            background: white;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Positioning Card - Full Width */
+        .positioning-card {
+            background: linear-gradient(135deg, var(--color-text) 0%, #2a2a2a 100%);
+            color: white;
+            border-radius: var(--radius);
+            padding: 60px;
+            margin-top: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .positioning-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            font-family: var(--font-display);
+            font-size: 180px;
+            color: rgba(255,255,255,0.05);
+            line-height: 1;
+        }
+
+        .positioning-card blockquote {
+            font-family: var(--font-display);
+            font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+            font-style: italic;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .positioning-card .author {
+            margin-top: 32px;
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-rose);
+        }
+
+        /* Success Rates Table */
+        .success-table {
+            width: 100%;
+            margin-top: 16px;
+        }
+
+        .success-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .success-row:not(:last-child) {
+            border-bottom: 1px solid var(--color-cream);
+        }
+
+        .success-age {
+            font-size: 14px;
+            color: var(--color-text-light);
+        }
+
+        .success-rate {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--color-accent);
+        }
+
+        .success-bar {
+            flex: 1;
+            height: 6px;
+            background: var(--color-cream);
+            border-radius: 3px;
+            margin: 0 16px;
+            overflow: hidden;
+        }
+
+        .success-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-sage), var(--color-rose));
+            border-radius: 3px;
+            transition: width 1s ease;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-cream);
+            padding: 60px 24px 40px;
+        }
+
+        .footer-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 48px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--color-blush);
+        }
+
+        .footer-brand {
+            max-width: 280px;
+        }
+
+        .footer-brand .brand {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: var(--color-text-light);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            color: var(--color-text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .footer-social a:hover {
+            background: var(--color-accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .footer-nav h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 20px;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+        }
+
+        .footer-nav li {
+            margin-bottom: 12px;
+        }
+
+        .footer-nav a {
+            font-size: 14px;
+            color: var(--color-text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: var(--color-accent);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: var(--color-text-light);
+        }
+
+        .legal-disclaimer {
+            max-width: 700px;
+            margin: 24px auto 0;
+            text-align: center;
+        }
+
+        .legal-disclaimer p {
+            font-size: 12px;
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                text-align: center;
+            }
+
+            .footer-brand {
+                max-width: 100%;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 60px 20px 80px;
+            }
+
+            .card {
+                padding: 28px;
+            }
+
+            .positioning-card {
+                padding: 40px 28px;
+            }
+
+            .positioning-card::before {
+                font-size: 120px;
+                left: 20px;
+            }
+
+            .cta-section {
+                padding: 50px 30px;
+                flex-direction: column;
+            }
+
+            .cta-testimonial {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo (2).png" alt="Solo Mom Intentional" class="nav-logo-img">
+            </a>
+            <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="partners.html">Partners</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="book.html" class="btn-book">Book a Session</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-label">Your Fertility Journey, Simplified</p>
+            <img src="images/LisaLogo.png" alt="Solo Mom by Choice — Intentional by Design" class="hero-logo">
+            <p class="hero-subtitle">Clarity and support for professional women navigating solo motherhood.</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="cards-grid">
+            <!-- Session Overview Card -->
+            <div class="card session-highlight">
+                <h2>30-Minute Private Session</h2>
+                <p>A 30-minute private session where I guide women through the donor conception and single-motherhood-by-choice decision-making process with real-life insight, emotional support, and clear next steps.</p>
+                <p style="margin-top: 16px;">Designed specifically for professional women who are considering becoming Solo Moms by Choice or who have already begun the journey — but feel overwhelmed, unsure, or alone.</p>
+                
+                <p class="card-subheading">This Session Gives You</p>
+                <ul class="benefits-list">
+                    <li>A safe, confidential space to ask anything about becoming a Solo Mom by Choice</li>
+                    <li>Clarity on egg freezing, IVF, PGT-A, and transfers</li>
+                    <li>Support navigating the emotional and logistical parts of the journey</li>
+                    <li>Guidance on balancing single motherhood and a demanding career</li>
+                </ul>
+                
+                <div class="card-note">
+                    <strong>Bonus:</strong> The Solo Mom by Choice Cheat Sheet (PDF takeaway)
+                </div>
+            </div>
+
+            <!-- Who This Is For Card -->
+            <div class="card">
+                <h2>Who This Session Is Perfect For</h2>
+                <p>Professional women who are:</p>
+                <ul class="benefits-list">
+                    <li>Considering becoming a Solo Mom by Choice</li>
+                    <li>Unsure where to start</li>
+                    <li>Feeling overwhelmed by donor selection</li>
+                    <li>Confused about IVF, meds, vials, and timelines</li>
+                    <li>Wanting actionable clarity, not vague advice</li>
+                    <li>Wishing they had support from someone who actually lived the journey</li>
+                </ul>
+            </div>
+
+            <!-- Agenda Card -->
+            <div class="card agenda-card">
+                <h2>Session Agenda</h2>
+                
+                <div class="agenda-item">
+                    <div class="agenda-time">2–3 min</div>
+                    <div class="agenda-content">
+                        <h3>Quick Welcome</h3>
+                        <p>Where are you in the process? What's top of mind?</p>
+                    </div>
+                </div>
+                
+                <div class="agenda-item">
+                    <div class="agenda-time">20 min</div>
+                    <div class="agenda-content">
+                        <h3>Your Top Questions</h3>
+                        <p>We focus on what matters most to you:</p>
+                        <ul class="agenda-topics">
+                            <li>Donor selection</li>
+                            <li>Egg freezing</li>
+                            <li>IVF & PGT-A</li>
+                            <li>Transfer decisions</li>
+                            <li>Emotional readiness</li>
+                            <li>Career planning & timing</li>
+                            <li>Cost expectations</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="agenda-item">
+                    <div class="agenda-time">5 min</div>
+                    <div class="agenda-content">
+                        <h3>Clear Next Steps</h3>
+                        <p>You walk away with a personalized plan so you know exactly what to do next.</p>
+                    </div>
+                </div>
+
+                <div class="card-highlight">
+                    <p><strong>PDF Follow-Up:</strong> The Solo Mom by Choice Cheat Sheet</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <div class="cta-testimonial cta-testimonial-left">
+                <p class="cta-testimonial-text">"Lisa's knowledge of the IVF process is incredibly thoughtful and practical. She helped me understand what to expect, ask the right questions, and feel more confident in my decisions."</p>
+                <p class="cta-testimonial-author">— Addi, Account Executive</p>
+            </div>
+            <div class="cta-content">
+                <h2>Ready to Get Started?</h2>
+                <p>Book your 30-minute session and take the first step with clarity and confidence.</p>
+                <a href="book.html" class="cta-button">Book Your Session</a>
+            </div>
+            <div class="cta-testimonial cta-testimonial-right">
+                <p class="cta-testimonial-text">"Lisa normalized everything I was feeling and helped me approach it with confidence instead of fear. And now I have healthy eggs for when I am ready."</p>
+                <p class="cta-testimonial-author">— Lindsay, Account Director</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <p class="brand">Solo Mom Intentional</p>
+                    <p>Empowering professional women on their journey to solo motherhood with clarity, support, and real-life insight.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Lisa</a></li>
+                        <li><a href="book.html">Book a Session</a></li>
+                        <li><a href="partners.html">Partners</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <h4>Blog</h4>
+                    <ul>
+                        <li><a href="blog.html">All Posts</a></li>
+                        <li><a href="blog.html#fertility">Fertility Planning</a></li>
+                        <li><a href="blog.html#donor">Donor Selection</a></li>
+                        <li><a href="blog.html#career">Career & Motherhood</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Solo Mom Intentional. All rights reserved.</p>
+                <p>Made with love for Solo Moms by Choice</p>
+            </div>
+            <div class="legal-disclaimer">
+                <p><strong>Legal Disclaimer:</strong> This session provides personal experience–based guidance and general educational support. It is not medical, legal, or psychological advice. Always consult a licensed healthcare provider for clinical decisions.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

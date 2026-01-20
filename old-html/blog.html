@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Solo Mom Intentional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #FBF9F7;
+            --color-cream: #F5F0EB;
+            --color-blush: #E8D5D0;
+            --color-rose: #C9A9A6;
+            --color-sage: #9CAF96;
+            --color-sage-light: #E8EFE6;
+            --color-lavender: #E8E4F0;
+            --color-lavender-dark: #C9C1D9;
+            --color-text: #3D3D3D;
+            --color-text-light: #6B6B6B;
+            --color-accent: #B67B6B;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Nunito Sans', -apple-system, sans-serif;
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.06);
+            --shadow-hover: 0 12px 40px rgba(0,0,0,0.12);
+            --radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        /* Navigation */
+        .nav {
+            background: var(--color-lavender);
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--color-text);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-logo:hover { opacity: 0.8; }
+
+        .nav-logo-img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--color-text);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.6);
+            color: var(--color-accent);
+        }
+
+        .nav-links .btn-book {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .nav-links .btn-book:hover {
+            background: #a36a5a;
+            color: white;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--color-text);
+            margin: 6px 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle { display: block; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--color-lavender);
+                flex-direction: column;
+                padding: 16px 24px;
+                gap: 8px;
+            }
+            .nav-links.active { display: flex; }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-blush) 50%, var(--color-rose) 100%);
+            padding: 80px 24px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-family: var(--font-display);
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-style: italic;
+            color: var(--color-text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Blog Grid */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 32px;
+        }
+
+        /* Blog Card */
+        .blog-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--color-blush) 0%, var(--color-rose) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .blog-card-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .blog-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .category-fertility { background: #E8E4F0; color: #3D3D3D; }
+        .category-donor { background: #E8EFE6; color: #3D3D3D; }
+        .category-career { background: #E8D5D0; color: #3D3D3D; }
+        .category-mindset { background: #E8E4F0; color: #3D3D3D; }
+        .category-community { background: #E8EFE6; color: #3D3D3D; }
+        .category-selfcare { background: #E8D5D0; color: #3D3D3D; }
+
+        .read-time {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+        }
+
+        .blog-card-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .blog-card-excerpt {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        .blog-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--color-cream);
+        }
+
+        .blog-card-date {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+        }
+
+        .read-more {
+            color: var(--color-accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .read-more svg {
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover .read-more svg {
+            transform: translateX(4px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-cream);
+            padding: 60px 24px 40px;
+        }
+
+        .footer-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 48px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--color-blush);
+        }
+
+        .footer-brand {
+            max-width: 280px;
+        }
+
+        .footer-brand .brand {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: var(--color-text-light);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            color: var(--color-text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .footer-social a:hover {
+            background: var(--color-accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .footer-nav h4 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 20px;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+        }
+
+        .footer-nav li {
+            margin-bottom: 12px;
+        }
+
+        .footer-nav a {
+            font-size: 14px;
+            color: var(--color-text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: var(--color-accent);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: var(--color-text-light);
+        }
+
+        .legal-disclaimer {
+            max-width: 700px;
+            margin: 24px auto 0;
+            text-align: center;
+        }
+
+        .legal-disclaimer p {
+            font-size: 12px;
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                text-align: center;
+            }
+
+            .footer-brand {
+                max-width: 100%;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo (2).png" alt="Solo Mom Intentional" class="nav-logo-img">
+            </a>
+            <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="partners.html">Partners</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="book.html" class="btn-book">Book a Session</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>The Intentional Mom Blog</h1>
+            <p>Insights, strategies, and encouragement for solo moms creating intentional, joy-filled lives for their families.</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="blog-grid">
+            <!-- Blog Post 1 -->
+            <a href="blog/egg-freezing-guide-professional-women.html" class="blog-card">
+                <div class="blog-card-image">
+                    <span>🥚</span>
+                </div>
+                <div class="blog-card-content">
+                    <div class="blog-card-header">
+                        <span class="category-badge category-fertility">Fertility Planning</span>
+                        <span class="read-time">9 min read</span>
+                    </div>
+                    <h2 class="blog-card-title">The Complete Egg Freezing Guide for Professional Women</h2>
+                    <p class="blog-card-excerpt">Everything professional women need to know about egg freezing—from timing and costs to what to expect during the process.</p>
+                    <div class="blog-card-footer">
+                        <span class="blog-card-date">January 18, 2026</span>
+                        <span class="read-more">
+                            Read More
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Blog Post 2 -->
+            <a href="blog/how-to-choose-sperm-donor-solo-mom.html" class="blog-card">
+                <div class="blog-card-image">
+                    <span>🔍</span>
+                </div>
+                <div class="blog-card-content">
+                    <div class="blog-card-header">
+                        <span class="category-badge category-donor">Donor Selection</span>
+                        <span class="read-time">11 min read</span>
+                    </div>
+                    <h2 class="blog-card-title">How to Choose a Sperm Donor: A Solo Mom's Guide</h2>
+                    <p class="blog-card-excerpt">Navigating sperm donor selection as a Solo Mom by Choice—from understanding donor types to the questions that really matter.</p>
+                    <div class="blog-card-footer">
+                        <span class="blog-card-date">January 12, 2026</span>
+                        <span class="read-more">
+                            Read More
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Blog Post 3 -->
+            <a href="blog/balancing-career-solo-motherhood-professional-women.html" class="blog-card">
+                <div class="blog-card-image">
+                    <span>💼</span>
+                </div>
+                <div class="blog-card-content">
+                    <div class="blog-card-header">
+                        <span class="category-badge category-career">Career & Motherhood</span>
+                        <span class="read-time">10 min read</span>
+                    </div>
+                    <h2 class="blog-card-title">Balancing a Demanding Career with Solo Motherhood</h2>
+                    <p class="blog-card-excerpt">Practical strategies for professional women navigating solo motherhood while maintaining their careers—without sacrificing their sanity.</p>
+                    <div class="blog-card-footer">
+                        <span class="blog-card-date">January 5, 2026</span>
+                        <span class="read-more">
+                            Read More
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <p class="brand">Solo Mom Intentional</p>
+                    <p>Empowering professional women on their journey to solo motherhood with clarity, support, and real-life insight.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Lisa</a></li>
+                        <li><a href="book.html">Book a Session</a></li>
+                        <li><a href="partners.html">Partners</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <h4>Blog</h4>
+                    <ul>
+                        <li><a href="blog.html">All Posts</a></li>
+                        <li><a href="blog.html#fertility">Fertility Planning</a></li>
+                        <li><a href="blog.html#donor">Donor Selection</a></li>
+                        <li><a href="blog.html#career">Career & Motherhood</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Solo Mom Intentional. All rights reserved.</p>
+                <p>Made with love for Solo Moms by Choice</p>
+            </div>
+            <div class="legal-disclaimer">
+                <p><strong>Legal Disclaimer:</strong> This session provides personal experience–based guidance and general educational support. It is not medical, legal, or psychological advice. Always consult a licensed healthcare provider for clinical decisions.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
