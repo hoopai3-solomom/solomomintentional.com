@@ -3,11 +3,17 @@ import './LinkTree.css';
 
 const links = [
   {
+    icon: '📅',
+    title: 'Book a Session',
+    description: '30-minute private guidance session',
+    url: 'https://buy.stripe.com/9B63cu928bHZ7gw0QX8g000',
+    featured: true
+  },
+  {
     icon: '📋',
     title: 'Free Solo Mom Cheat Sheet',
     description: 'Download your guide to getting started',
-    url: '#',
-    featured: true
+    url: '#'
   },
   {
     icon: '🌐',
