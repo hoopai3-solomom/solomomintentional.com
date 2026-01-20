@@ -35,6 +35,7 @@ export function Footer() {
               <li><Link to="/book">Book a Session</Link></li>
               <li><Link to="/partners">Partners</Link></li>
               <li><Link to="/contact">Contact</Link></li>
+              <li><Link to="/links">All Links</Link></li>
             </ul>
           </div>
           <div className="footer-nav">

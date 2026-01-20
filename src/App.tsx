@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Nav } from './components/Nav';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
@@ -8,12 +8,16 @@ import { BlogPost } from './pages/BlogPost';
 import { Book } from './pages/Book';
 import { Contact } from './pages/Contact';
 import { Partners } from './pages/Partners';
+import { LinkTree } from './pages/LinkTree';
 import './index.css';
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+  const isLinkTreePage = location.pathname === '/links';
+
   return (
-    <BrowserRouter>
-      <Nav />
+    <>
+      {!isLinkTreePage && <Nav />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -22,8 +26,17 @@ function App() {
         <Route path="/book" element={<Book />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/partners" element={<Partners />} />
+        <Route path="/links" element={<LinkTree />} />
       </Routes>
-      <Footer />
+      {!isLinkTreePage && <Footer />}
+    </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   );
 }
