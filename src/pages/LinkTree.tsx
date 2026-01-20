@@ -36,6 +36,12 @@ const links = [
     url: '#'
   },
   {
+    icon: '🎵',
+    title: 'TikTok',
+    description: '@solomomintentional',
+    url: 'https://www.tiktok.com/@solomomintentional?_r=1&_t=ZP-93Eud5GRW5W'
+  },
+  {
     icon: '👥',
     title: 'Facebook',
     description: 'Join our community',
