@@ -26,7 +26,6 @@ export function Nav() {
         <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
           <li><Link to="/" className={isActive('/') ? 'active' : ''}>Home</Link></li>
           <li><Link to="/about" className={isActive('/about') ? 'active' : ''}>About</Link></li>
-          <li><Link to="/blog" className={isActive('/blog') || location.pathname.startsWith('/blog/') ? 'active' : ''}>Blog</Link></li>
           <li><Link to="/partners" className={isActive('/partners') ? 'active' : ''}>Partners</Link></li>
           <li><Link to="/contact" className={isActive('/contact') ? 'active' : ''}>Contact</Link></li>
           <li><Link to="/book" className="btn-book">Book a Session</Link></li>
