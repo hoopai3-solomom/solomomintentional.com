@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { getPostBySlug, type BlogPost as BlogPostType } from '../content/blog/posts';
+import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import './BlogPost.css';
 
 const categoryLabels: Record<BlogPostType['category'], string> = {
@@ -77,6 +78,12 @@ function renderMarkdown(content: string): string {
 export function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? getPostBySlug(slug) : undefined;
+
+  useDocumentMeta({
+    title: post?.title ?? 'Post Not Found',
+    description: post?.excerpt ?? 'The blog post you are looking for could not be found.',
+    url: post ? `https://solomomintentional.com/blog/${post.slug}` : undefined,
+  });
 
   if (!post) {
     return (

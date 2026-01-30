@@ -11,6 +11,224 @@ export interface BlogPost {
 
 export const posts: BlogPost[] = [
   {
+    slug: 'options-to-become-a-mom-without-a-partner',
+    title: "I Haven't Met the Right Person—What Are My Options to Become a Mom?",
+    excerpt: "When life doesn't follow the expected timeline, many women wonder what paths to motherhood are still available. Here's a clear look at your options.",
+    category: 'mindset',
+    publishedAt: '2026-01-30',
+    readTime: 7,
+    emoji: '🛤️',
+    content: `
+# I Haven't Met the Right Person—What Are My Options to Become a Mom?
+
+## When Life Doesn't Follow the Expected Timeline
+
+Many women assume motherhood will happen after partnership. And when that doesn't unfold as planned, it can create quiet grief, confusion, and urgency.
+
+If you haven't met the right person but still want to become a mom, you may be wondering what options—if any—are truly available to you.
+
+The good news? There are more paths than ever before.
+
+## Option 1: Waiting (With Intention)
+
+Some women choose to wait, while:
+
+- Monitoring fertility through testing
+- Freezing eggs as a backup plan
+- Staying open to partnership
+
+Waiting doesn't have to mean doing nothing. It can be an intentional choice when paired with information and planning.
+
+## Option 2: Egg Freezing
+
+Egg freezing allows women to:
+
+- Preserve fertility at a younger biological age
+- Reduce time pressure around dating
+- Keep future options open
+
+For women who aren't ready for solo motherhood but don't want to close doors, this can be an empowering middle ground.
+
+## Option 3: Becoming a Mom on Your Own
+
+Single motherhood by choice is no longer rare—but it is deeply intentional.
+
+Women who choose this path often:
+
+- Want motherhood more than partnership right now
+- Have built financial and emotional stability
+- Are comfortable building nontraditional families
+
+This decision is rarely impulsive—it's thoughtful, measured, and deeply personal.
+
+## Option 4: A Combination Approach
+
+Many women:
+
+- Freeze eggs and plan for solo motherhood
+- Attempt pregnancy now while preserving options for siblings
+- Revisit decisions as circumstances evolve
+
+You are not locked into a single path.
+
+## The Emotional Side No One Talks About
+
+What often makes this decision hard isn't logistics—it's grief.
+
+Grief for:
+
+- The relationship you imagined
+- The timeline you expected
+- The simplicity you hoped for
+
+Acknowledging that grief doesn't weaken your decision. It strengthens it.
+
+## Questions That Can Help Clarify Your Path
+
+Instead of asking "What should I do?", try:
+
+- What feels most aligned with my values right now?
+- What decision reduces regret—not fear?
+- What support systems do I realistically have?
+- What information do I still need?
+
+Clarity often comes from better questions, not faster answers.
+
+## You're Allowed to Want Both
+
+You can want:
+
+- A partner *and* a child
+- Independence *and* support
+- Flexibility *and* certainty
+
+These desires don't contradict each other—they reflect a full, thoughtful life.
+
+## The Bottom Line
+
+Not having met the right person does not mean motherhood is off the table.
+
+You have options.
+You have time—sometimes more than you think.
+And you don't have to navigate this alone.
+
+---
+
+*If you'd like support thinking through these decisions, I offer clarity sessions for women exploring motherhood on their own terms. [Book a session](/book) to get started.*
+    `
+  },
+  {
+    slug: 'am-i-too-old-to-become-a-mom-on-my-own',
+    title: 'Am I Too Old to Become a Mom on My Own?',
+    excerpt: 'If you\'ve found yourself asking this question quietly—maybe late at night, maybe after another birthday milestone—you\'re not alone. Here\'s what to actually consider.',
+    category: 'fertility',
+    publishedAt: '2026-01-30',
+    readTime: 7,
+    emoji: '🕰️',
+    content: `
+# Am I Too Old to Become a Mom on My Own?
+
+If you've found yourself asking this question quietly—maybe late at night, maybe after another wedding invitation or birthday milestone—you're not alone.
+
+Many professional women reach their late 30s or early 40s without having met the right partner and begin wondering whether motherhood is still possible, or whether the window has closed. This question isn't rooted in panic or desperation. It's rooted in responsibility, self-awareness, and a desire to make an informed decision.
+
+The short answer? There is no universal "too old." But there are realities worth understanding.
+
+## Why This Question Comes Up for So Many Women
+
+Women today are:
+
+- Building meaningful careers
+- Prioritizing financial stability
+- Being more intentional about partnership
+
+And yet biology hasn't evolved at the same pace.
+
+The tension between where you are in life and where fertility naturally declines creates an emotional crossroads—especially when partnership hasn't happened yet.
+
+## What Doctors Actually Mean by "Age"
+
+From a medical standpoint, age affects:
+
+- Egg quality
+- Egg quantity
+- Likelihood of conception per cycle
+
+In general:
+
+- Fertility begins to decline gradually in the early 30s
+- The decline becomes steeper after 35
+- After 40, conception is still possible, but more variable and often requires assistance
+
+That said, age alone does not determine readiness for motherhood—nor does it dictate whether becoming a mom on your own is the right choice.
+
+## Motherhood Without a Partner: What Changes (and What Doesn't)
+
+Becoming a mom on your own doesn't mean lowering your standards or "giving up" on partnership. It means separating two decisions that don't always need to happen together:
+
+- Becoming a parent
+- Finding a romantic partner
+
+Many women choose to:
+
+- Freeze their eggs to preserve optionality
+- Pursue pregnancy independently
+- Do both—freezing eggs and planning for solo motherhood
+
+There is no single right order.
+
+## Emotional Readiness Matters as Much as Biology
+
+Women often ask, "Am I too old?" when the real question underneath is:
+
+- Am I strong enough to do this alone?
+- Will my child be okay?
+- Will I regret this decision later?
+
+These are not red flags. They're signs of thoughtful decision-making.
+
+## Common Myths About Being "Too Old"
+
+**Myth: Children of older mothers struggle more**
+Reality: Children benefit from emotionally mature, stable parents
+
+**Myth: You'll be too tired**
+Reality: Parenting is tiring at any age—support systems matter more than birthdate
+
+**Myth: It's selfish**
+Reality: Choosing intentional motherhood is one of the least selfish decisions there is
+
+## What Helps Women Decide
+
+Women who feel confident in their decision—regardless of age—often share a few things in common:
+
+- They gathered accurate medical information
+- They thought through support systems
+- They separated fear from facts
+- They gave themselves permission to explore options without rushing
+
+## You Don't Have to Decide Everything Today
+
+Whether you're considering egg freezing, solo motherhood, or simply trying to understand your timeline, the goal isn't to force a decision—it's to create clarity.
+
+Many women feel immediate relief once they realize:
+
+*I can explore this without committing today.*
+
+## The Bottom Line
+
+You are not "behind."
+You are not late.
+And you are not alone in asking this question.
+
+Age is one factor—but it is not the whole story. Motherhood can take many forms, and the right path is the one that aligns with your values, health, and sense of readiness.
+
+---
+
+*If you're navigating these questions and want a space to talk them through—without pressure or judgment—I offer clarity sessions for women exploring their options around motherhood. [Book a session](/book) to get started.*
+    `
+  },
+  {
     slug: 'egg-freezing-guide-professional-women',
     title: 'The Complete Egg Freezing Guide for Professional Women',
     excerpt: 'Everything professional women need to know about egg freezing—from timing and costs to what to expect during the process.',
