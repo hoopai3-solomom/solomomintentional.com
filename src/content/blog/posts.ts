@@ -11,6 +11,110 @@ export interface BlogPost {
 
 export const posts: BlogPost[] = [
   {
+    slug: 'how-to-build-your-village-solo-mom-by-choice',
+    title: 'How to Build Your Village as a Solo Mom by Choice',
+    excerpt: 'You don\'t need a massive support system. Research shows the right 3 to 5 people can transform your solo motherhood journey. Here\'s how to find them.',
+    category: 'community',
+    publishedAt: '2026-02-26',
+    readTime: 9,
+    emoji: '🤝',
+    content: `
+# How to Build Your Village as a Solo Mom by Choice
+
+"It takes a village." You've heard it a hundred times. But when you're becoming a mom on your own, that phrase can feel less like encouragement and more like a reminder of what you don't have.
+
+Here's the truth: your village doesn't just appear. You build it, intentionally, one relationship at a time. And the research says you need far fewer people than you think.
+
+## The Loneliness No One Warns You About
+
+Let's start with something important: if you've ever felt lonely on this journey, you are in very good company. A 2025 Motherly survey found that 70% of mothers say motherhood is lonelier than they imagined. An Ohio State University study found that 66% of parents describe the demands of parenting as isolating, and 38% feel they have no one supporting them in their role.
+
+For solo moms by choice, this can hit differently. You made this decision with intention and courage. Admitting you feel alone can feel like admitting you made the wrong call. But loneliness is not a sign of a bad decision. It is a sign of a basic human need. Research from the U.S. Surgeon General's 2023 advisory showed that lacking social connection carries health risks comparable to smoking 15 cigarettes a day.
+
+The takeaway is simple: building your village is not a luxury. It's a necessity.
+
+## You Don't Need a Village. You Need 5 People.
+
+Here's where the research gets encouraging. According to anthropologist Robin Dunbar's widely studied framework, humans can maintain about 150 casual relationships, but only about 5 truly close ones. That means you don't need a sprawling network. You need a small, reliable inner circle.
+
+A 2019 perinatal study published in the Journal of Affective Disorders found that the two most protective types of support are "Reassurance of Worth" (having someone who acknowledges your skills and strengths) and "Reliable Alliance" (knowing you can count on someone when it matters). Even more compelling: the protective effect of social support nearly doubled from pregnancy to six months postpartum, meaning support becomes more important over time, not less.
+
+So who might your 3 to 5 people be? Think about:
+
+- A friend who truly gets your decision and cheers you on
+- A family member who shows up practically (not just emotionally)
+- Another solo mom who understands the daily realities
+- A professional supporter like a therapist, coach, or [Solomom clarity session guide](/book)
+- A neighbor or local parent who can step in for emergencies
+
+You don't need all five today. Start with one or two and build from there.
+
+## The Surprising Power of Loose Connections
+
+Your inner circle matters most, but don't underestimate the people on the edges. Sociologist Mark Granovetter's landmark research at Stanford found that casual acquaintances, what he called "weak ties," often connect you to resources and opportunities that your close friends simply can't. They introduce you to different networks, different perspectives, and different kinds of help.
+
+For solo moms, these loose connections might look like:
+
+- The parent you chat with at library story time
+- A coworker who mentions a great pediatrician
+- Someone in an online group who shares a meal prep hack that saves your weeknights
+- A neighbor who offers to grab something from the store
+
+These relationships may feel small, but research shows they contribute meaningfully to your overall sense of belonging and support.
+
+## Online Community Is Legitimate Community
+
+If you've ever felt guilty for turning to your phone for connection instead of meeting people face-to-face, let this go. A 2024 meta-analysis of seven randomized controlled trials found that online parenting support is statistically just as effective as in-person support. Parents in the studies were actually more satisfied with online formats. And the best outcomes came from combining both.
+
+Pew Research found that 42% of mothers regularly visit online parenting communities. For solo moms by choice, these spaces can be especially valuable because the people there understand your specific experience without needing an explanation.
+
+Communities worth exploring:
+
+- **Single Mothers by Choice (SMC)** organization, founded in 1981, with over 30,000 members, local chapters, and a 24/7 online forum
+- **Motherhood Reimagined** by Sarah Kowalski, offering small group "Support Incubators" for women at the same stage
+- **Frolo**, an app designed for single parents to connect, chat, and arrange local meetups
+- **Facebook groups** for SMBCs at every stage, from thinking to trying to parenting
+
+## How to Ask for Help (Without Feeling Like a Burden)
+
+This is the part that trips most of us up. You chose solo motherhood. Asking for help can feel like it contradicts the whole "by choice" part. But researcher Brene Brown's work on vulnerability offers a powerful reframe: when you open up about your needs, people don't think less of you. They actually trust you more.
+
+Brown calls this the vulnerability paradox. We admire honesty and openness in others while being terrified to show it ourselves. But sharing what you need creates a cycle that deepens relationships and builds the kind of trust your village depends on.
+
+Some practical ways to make asking easier:
+
+- Be specific. "Can you hold the baby for 20 minutes while I shower?" is easier to respond to than "I need help."
+- Offer reciprocity in whatever form works. One person cooks, another runs errands, another pet-sits. It doesn't have to be equal.
+- Normalize the ask. The more you do it, the easier it gets, and the more others feel comfortable asking you too.
+
+If you're still in the planning stages and could use support thinking through your [options for becoming a mom](/blog/options-to-become-a-mom-without-a-partner) or [preparing for the practical side of solo motherhood](/blog/balancing-career-solo-motherhood-professional-women), having a sounding board matters. A [Solomom clarity session](/book) can help you start that process.
+
+## Start Building Today
+
+You don't need to overhaul your social life overnight. Start small:
+
+- Reach out to one person this week and be honest about where you are
+- Join one online community and introduce yourself
+- Say yes to one invitation you might normally skip
+- Offer help to another parent (the "helper's high" is real, and giving support reduces your own isolation)
+- Explore a local meetup, parenting class, or support group
+
+Your village will not look like anyone else's. It doesn't need to. What matters is that it's real, it's reciprocal, and it's yours.
+
+## The Bottom Line
+
+Solo motherhood by choice is one of the most intentional decisions a woman can make. Building your village deserves that same intentionality.
+
+You don't need dozens of people. You need a few good ones, plus a wider web of loose connections and communities that remind you: you are not doing this alone.
+
+The women who thrive in solo motherhood are not the ones who do everything themselves. They are the ones who build, nurture, and lean on their village without apology.
+
+---
+
+*Wondering how to start building your support system? I offer clarity sessions for women navigating solo motherhood with intention. [Book a session](/book) to talk through your next steps.*
+    `
+  },
+  {
     slug: 'options-to-become-a-mom-without-a-partner',
     title: "I Haven't Met the Right Person—What Are My Options to Become a Mom?",
     excerpt: "When life doesn't follow the expected timeline, many women wonder what paths to motherhood are still available. Here's a clear look at your options.",
