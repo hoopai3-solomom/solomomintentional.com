@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/book.css';
+---
+
+<BaseLayout
+  title="Book a Session"
+  description="One-on-one guidance for your fertility journey. Book a 30-minute private session."
+>
+  <header class="page-header book-header">
+    <h1>Book a Session</h1>
+    <p>One-on-one guidance for your fertility journey</p>
+  </header>
+
+  <main class="container book-container">
+    <div class="intro-text">
+      <p>Ready to take the next step? Book a session and get the clarity and confidence you need to move forward on your fertility journey.</p>
+    </div>
+
+    <div class="about-session">
+      <div class="about-session-content">
+        <h2>About the Session</h2>
+        <p class="session-description">Becoming a Solo Mom by Choice is an empowered decision, but the process can feel overwhelming, isolating, and unclear. I help women cut through the noise, understand their options, and move forward with confidence — without putting their careers or lives on pause.</p>
+      </div>
+      <div class="what-youll-gain">
+        <h3>What You'll Gain</h3>
+        <div class="gain-items">
+          <div class="gain-item">
+            <span class="gain-icon">✨</span>
+            <span class="gain-text">Confidence</span>
+          </div>
+          <div class="gain-item">
+            <span class="gain-icon">🔍</span>
+            <span class="gain-text">Clarity</span>
+          </div>
+          <div class="gain-item">
+            <span class="gain-icon">📍</span>
+            <span class="gain-text">Next Steps</span>
+          </div>
+          <div class="gain-item">
+            <span class="gain-icon">💜</span>
+            <span class="gain-text">Support</span>
+          </div>
+          <div class="gain-item bonus">
+            <span class="gain-icon">📋</span>
+            <span class="gain-text">Cheat Sheet Included</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sessions-grid">
+      <div class="session-card featured">
+        <div class="session-header">
+          <h2>Clarity Session</h2>
+          <span class="duration">30 minutes</span>
+        </div>
+        <div class="session-price">
+          <span class="price">$100</span>
+          <span class="per">/ session</span>
+        </div>
+        <div class="session-body">
+          <p>A deep-dive session to create a clear action plan for your fertility journey, tailored to your unique situation.</p>
+          <ul class="session-features">
+            <li>Comprehensive situation review</li>
+            <li>Personalized action plan</li>
+            <li>Cost & timeline breakdown</li>
+            <li>Clinic & provider guidance</li>
+            <li>Follow-up email summary</li>
+          </ul>
+          <a href="https://buy.stripe.com/9B63cu928bHZ7gw0QX8g000" class="btn-book-session">Book Clarity Session</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="testimonials-section">
+      <h2>What Women Are Saying</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="quote-icon">"</div>
+          <p class="testimonial-text">Lisa's knowledge of the IVF process is incredibly thoughtful and practical. She helped me understand what to expect, ask the right questions, and feel more confident in my decisions. Having her insight brought a sense of calm and clarity during a time that can otherwise feel very uncertain. I'm so grateful for her guidance during such an emotional journey.</p>
+          <div class="testimonial-author">
+            <p class="author-name">Addi</p>
+            <p class="author-title">Account Executive</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="quote-icon">"</div>
+          <p class="testimonial-text">When I spoke with Lisa, I had already gone through IVF and the sperm donor process, but I was starting to get scared about how I would manage it all as a single mom with a demanding career. Talking to Lisa put me at ease. She did not sugarcoat the hard parts, but she showed me how it can work. I walked away feeling so much better.</p>
+          <div class="testimonial-author">
+            <p class="author-name">Daniella</p>
+            <p class="author-title">Director of IT</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="quote-icon">"</div>
+          <p class="testimonial-text">I felt stressed from every angle-job, getting older, being single even though I was trying to find someone-and egg freezing scared me. Lisa normalized everything I was feeling and helped me approach it with confidence instead of fear. And now I have healthy eggs for when I am ready which puts me at ease.</p>
+          <div class="testimonial-author">
+            <p class="author-name">Lindsay</p>
+            <p class="author-title">Account Director</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <h2>Common Questions</h2>
+
+      <div class="faq-item">
+        <h3>How do sessions work?</h3>
+        <p>All sessions are conducted via video call (Zoom). After booking, you'll receive a confirmation email with the link and any prep materials.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What if I need to reschedule?</h3>
+        <p>Life happens! You can reschedule up to 24 hours before your appointment at no charge.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is everything confidential?</h3>
+        <p>Absolutely. Everything we discuss stays between us. Your privacy is my priority.</p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

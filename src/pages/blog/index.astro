@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/blog.css';
+import { getAllPosts, type BlogPost } from '../../content/blog/posts';
+
+const categoryLabels: Record<BlogPost['category'], string> = {
+  fertility: 'Fertility Planning',
+  donor: 'Donor Selection',
+  career: 'Career & Motherhood',
+  mindset: 'Mindset',
+  community: 'Community',
+  selfcare: 'Self Care'
+};
+
+function formatDate(dateString: string): string {
+  return new Date(dateString).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
+
+const posts = getAllPosts();
+---
+
+<BaseLayout
+  title="Blog"
+  description="Insights, strategies, and encouragement for solo moms creating intentional, joy-filled lives for their families."
+>
+  <section class="blog-hero">
+    <div class="blog-hero-content">
+      <h1>The Intentional Mom Blog</h1>
+      <p>Insights, strategies, and encouragement for solo moms creating intentional, joy-filled lives for their families.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="category-filter-active" id="filter-bar" style="display: none;">
+      <span id="filter-label"></span>
+      <a href="/blog" class="clear-filter">Clear filter</a>
+    </div>
+
+    <div class="blog-grid" id="blog-grid">
+      {posts.map((post) => (
+        <a href={`/blog/${post.slug}`} class="blog-card" data-category={post.category}>
+          <div class="blog-card-image">
+            <span>{post.emoji}</span>
+          </div>
+          <div class="blog-card-content">
+            <div class="blog-card-header">
+              <span class={`category-badge category-${post.category}`}>
+                {categoryLabels[post.category]}
+              </span>
+              <span class="read-time">{post.readTime} min read</span>
+            </div>
+            <h2 class="blog-card-title">{post.title}</h2>
+            <p class="blog-card-excerpt">{post.excerpt}</p>
+            <div class="blog-card-footer">
+              <span class="blog-card-date">{formatDate(post.publishedAt)}</span>
+              <span class="read-more">
+                Read More
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div class="no-posts" id="no-posts" style="display: none;">
+      <p>No posts found in this category.</p>
+      <a href="/blog" class="back-link">View all posts</a>
+    </div>
+  </main>
+</BaseLayout>
+
+<script>
+  const categoryLabels: Record<string, string> = {
+    fertility: 'Fertility Planning',
+    donor: 'Donor Selection',
+    career: 'Career & Motherhood',
+    mindset: 'Mindset',
+    community: 'Community',
+    selfcare: 'Self Care'
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get('category');
+
+  if (category) {
+    const filterBar = document.getElementById('filter-bar');
+    const filterLabel = document.getElementById('filter-label');
+    const noPosts = document.getElementById('no-posts');
+    const cards = document.querySelectorAll('.blog-card') as NodeListOf<HTMLElement>;
+
+    if (filterBar && filterLabel) {
+      filterBar.style.display = 'flex';
+      filterLabel.textContent = `Showing: ${categoryLabels[category] || category}`;
+    }
+
+    let visibleCount = 0;
+    cards.forEach((card) => {
+      if (card.dataset.category !== category) {
+        card.style.display = 'none';
+      } else {
+        visibleCount++;
+      }
+    });
+
+    if (visibleCount === 0 && noPosts) {
+      noPosts.style.display = 'block';
+    }
+  }
+</script>

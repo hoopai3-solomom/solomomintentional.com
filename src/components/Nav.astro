@@ -1,0 +1,33 @@
+---
+import '../styles/nav.css';
+
+const pathname = Astro.url.pathname;
+---
+
+<nav class="nav">
+  <div class="nav-container">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo (2).png" alt="Solo Mom Intentional" class="nav-logo-img" />
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="/" class={pathname === '/' ? 'active' : ''}>Home</a></li>
+      <li><a href="/about" class={pathname.startsWith('/about') ? 'active' : ''}>About</a></li>
+      <li><a href="/partners" class={pathname.startsWith('/partners') ? 'active' : ''}>Partners</a></li>
+      <li><a href="/contact" class={pathname.startsWith('/contact') ? 'active' : ''}>Contact</a></li>
+      <li><a href="/book" class="btn-book">Book a Session</a></li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  toggle?.addEventListener('click', () => {
+    links?.classList.toggle('active');
+  });
+</script>

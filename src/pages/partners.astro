@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/partners.css';
+
+const partners = [
+  {
+    icon: '🏥',
+    name: 'Fertility Clinic',
+    type: 'Medical Partner',
+    description: 'Leading fertility specialists providing comprehensive IVF, egg freezing, and reproductive care services.',
+    link: '#'
+  },
+  {
+    icon: '🧬',
+    name: 'Sperm Bank',
+    type: 'Donor Services',
+    description: 'Trusted donor sperm bank with extensive donor profiles and excellent support throughout the selection process.',
+    link: '#'
+  },
+  {
+    icon: '💼',
+    name: 'Fertility Benefits',
+    type: 'Financial Partner',
+    description: 'Helping you navigate insurance benefits and financing options for your fertility treatments.',
+    link: '#'
+  },
+  {
+    icon: '🧘',
+    name: 'Wellness Support',
+    type: 'Holistic Care',
+    description: 'Mental health and wellness resources specifically designed for women on their fertility journey.',
+    link: '#'
+  },
+  {
+    icon: '⚖️',
+    name: 'Legal Services',
+    type: 'Legal Partner',
+    description: 'Family law attorneys specializing in donor agreements, parental rights, and solo parent documentation.',
+    link: '#'
+  },
+  {
+    icon: '👶',
+    name: 'Parenting Resources',
+    type: 'Community',
+    description: 'Solo mom communities and resources for support before, during, and after your journey to motherhood.',
+    link: '#'
+  }
+];
+---
+
+<BaseLayout
+  title="Partners"
+  description="Trusted resources and providers supporting your journey to solo motherhood"
+>
+  <header class="page-header partners-header">
+    <h1>Our Partners</h1>
+    <p>Trusted resources and providers supporting your journey to solo motherhood</p>
+  </header>
+
+  <main class="container partners-container">
+    <div class="intro-text">
+      <p>I've partnered with trusted professionals and organizations who share my commitment to supporting women on their fertility journey. Each partner has been personally vetted to ensure they provide exceptional care and service.</p>
+    </div>
+
+    <div class="partners-grid">
+      {partners.map((partner) => (
+        <div class="partner-card">
+          <div class="partner-logo-placeholder">{partner.icon}</div>
+          <h3>{partner.name}</h3>
+          <p class="partner-type">{partner.type}</p>
+          <p>{partner.description}</p>
+          <a href={partner.link} class="partner-link">Learn More</a>
+        </div>
+      ))}
+    </div>
+
+    <div class="partner-cta">
+      <h2>Become a Partner</h2>
+      <p>Are you a provider or organization that supports women on their fertility journey? Let's connect.</p>
+      <a href="/contact" class="partner-cta-button">Get in Touch</a>
+    </div>
+  </main>
+</BaseLayout>

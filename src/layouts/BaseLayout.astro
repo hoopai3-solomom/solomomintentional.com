@@ -1,0 +1,109 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  url?: string;
+  image?: string;
+  type?: string;
+  publishedAt?: string;
+}
+
+const {
+  title,
+  description,
+  url = Astro.url.href,
+  image = 'https://solomomintentional.com/images/LisaLogo.png',
+  type = 'website',
+  publishedAt
+} = Astro.props;
+
+const fullTitle = `${title} | Solo Mom Intentional`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/images/logo (2).png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>{fullTitle}</title>
+
+    <link rel="canonical" href={url} />
+    <link rel="alternate" type="application/rss+xml" title="Solo Mom Intentional Blog" href="/rss.xml" />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="Solo Mom Intentional" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={url} />
+
+    {type === 'article' && publishedAt && (
+      <>
+        <meta property="article:published_time" content={new Date(publishedAt).toISOString()} />
+        <meta property="article:author" content="Lisa Hooper" />
+      </>
+    )}
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <meta name="description" content={description} />
+
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    {type === 'article' && publishedAt ? (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": title,
+        "description": description,
+        "image": image,
+        "url": url,
+        "datePublished": new Date(publishedAt).toISOString(),
+        "author": {
+          "@type": "Person",
+          "name": "Lisa Hooper"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Solo Mom Intentional",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://solomomintentional.com/images/LisaLogo.png"
+          }
+        }
+      })} />
+    ) : (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Solo Mom Intentional",
+        "url": "https://solomomintentional.com",
+        "description": "Clarity and support for professional women navigating solo motherhood.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Solo Mom Intentional",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://solomomintentional.com/images/LisaLogo.png"
+          }
+        }
+      })} />
+    )}
+  </head>
+  <body>
+    <Nav />
+    <slot />
+    <Footer />
+  </body>
+</html>
