@@ -41,12 +41,14 @@ const htmlContent = await marked(contentWithoutTitle);
 const shareUrl = `https://solomomintentional.com/blog/${post.slug}`;
 const encodedUrl = encodeURIComponent(shareUrl);
 const encodedTitle = encodeURIComponent(post.title);
+const ogImage = post.image ? `https://solomomintentional.com${post.image}` : undefined;
 ---
 
 <BaseLayout
   title={post.title}
   description={post.excerpt}
   url={shareUrl}
+  image={ogImage}
   type="article"
   publishedAt={post.publishedAt}
 >
@@ -71,6 +73,10 @@ const encodedTitle = encodeURIComponent(post.title);
 
       <h1>{post.title}</h1>
       <p class="blog-post-excerpt">{post.excerpt}</p>
+
+      {post.image && (
+        <img src={post.image} alt={post.title} class="blog-post-hero-image" />
+      )}
     </header>
 
     <div class="blog-post-content" set:html={htmlContent} />

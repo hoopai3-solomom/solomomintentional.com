@@ -61,9 +61,13 @@ const posts = getAllPosts();
     <div class="blog-grid" id="blog-grid">
       {posts.map((post) => (
         <a href={`/blog/${post.slug}`} class="blog-card" data-category={post.category}>
-          <div class="blog-card-image">
-            <span>{post.emoji}</span>
-          </div>
+          {post.image ? (
+            <img src={post.image} alt={post.title} class="blog-card-image blog-card-img" />
+          ) : (
+            <div class="blog-card-image">
+              <span>{post.emoji}</span>
+            </div>
+          )}
           <div class="blog-card-content">
             <div class="blog-card-header">
               <span class={`category-badge category-${post.category}`}>

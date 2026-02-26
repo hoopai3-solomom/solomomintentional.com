@@ -7,6 +7,7 @@ export interface BlogPost {
   publishedAt: string;
   readTime: number;
   emoji: string;
+  image?: string;
 }
 
 export const posts: BlogPost[] = [
@@ -18,6 +19,7 @@ export const posts: BlogPost[] = [
     publishedAt: '2026-02-26',
     readTime: 9,
     emoji: '🤝',
+    image: '/images/Solo Village.jpg',
     content: `
 # How to Build Your Village as a Solo Mom by Choice
 
@@ -2107,6 +2109,7 @@ You chose this journey with intention. Your words to yourself should reflect tha
     publishedAt: '2026-02-22',
     readTime: 8,
     emoji: '🤝',
+    image: '/images/Work Negotiations.jpg',
     content: `
 # Negotiating Workplace Flexibility as a Solo Parent
 
@@ -2210,6 +2213,7 @@ The data supports it. The law increasingly protects it. And the confidence to as
     publishedAt: '2026-02-23',
     readTime: 7,
     emoji: '🫶',
+    image: '/images/Egg.jpg',
     content: `
 # The Emotional Side of Egg Retrieval
 
@@ -2297,6 +2301,7 @@ You're doing this because you want something deeply meaningful. Honor that by ta
     publishedAt: '2026-02-24',
     readTime: 8,
     emoji: '🏥',
+    image: '/images/Fertility Clinic.jpg',
     content: `
 # Choosing the Right Fertility Clinic for You
 
@@ -2407,6 +2412,7 @@ This is your journey. You deserve a team that treats it that way.
     publishedAt: '2026-02-25',
     readTime: 9,
     emoji: '📖',
+    image: '/images/Glossary.jpg',
     content: `
 # The Solo Mom Glossary: Terms You Need to Know
 

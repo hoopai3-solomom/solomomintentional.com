@@ -172,6 +172,11 @@
   font-size: 3rem;
 }
 
+img.blog-card-img {
+  object-fit: cover;
+  display: block;
+}
+
 .blog-card-content {
   padding: 24px;
   display: flex;
