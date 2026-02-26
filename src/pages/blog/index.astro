@@ -35,10 +35,28 @@ const posts = getAllPosts();
   </section>
 
   <main class="container">
+    <div class="blog-toolbar">
+      <div class="blog-search" id="search-container">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="M21 21l-4.35-4.35"/>
+        </svg>
+        <input type="text" id="search-input" placeholder="Search articles..." autocomplete="off" />
+      </div>
+      <div class="category-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        {Object.entries(categoryLabels).map(([key, label]) => (
+          <button class="filter-btn" data-filter={key}>{label}</button>
+        ))}
+      </div>
+    </div>
+
     <div class="category-filter-active" id="filter-bar" style="display: none;">
       <span id="filter-label"></span>
       <a href="/blog" class="clear-filter">Clear filter</a>
     </div>
+
+    <div class="search-results" id="search-results" style="display: none;"></div>
 
     <div class="blog-grid" id="blog-grid">
       {posts.map((post) => (
@@ -76,8 +94,17 @@ const posts = getAllPosts();
   </main>
 </BaseLayout>
 
-<script>
-  const categoryLabels: Record<string, string> = {
+<script is:inline>
+  var cards = document.querySelectorAll('.blog-card');
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var blogGrid = document.getElementById('blog-grid');
+  var noPosts = document.getElementById('no-posts');
+  var searchInput = document.getElementById('search-input');
+  var searchResults = document.getElementById('search-results');
+  var filterBar = document.getElementById('filter-bar');
+  var filterLabel = document.getElementById('filter-label');
+
+  var categoryLabels = {
     fertility: 'Fertility Planning',
     donor: 'Donor Selection',
     career: 'Career & Motherhood',
@@ -86,31 +113,140 @@ const posts = getAllPosts();
     selfcare: 'Self Care'
   };
 
-  const params = new URLSearchParams(window.location.search);
-  const category = params.get('category');
+  var activeFilter = 'all';
 
-  if (category) {
-    const filterBar = document.getElementById('filter-bar');
-    const filterLabel = document.getElementById('filter-label');
-    const noPosts = document.getElementById('no-posts');
-    const cards = document.querySelectorAll('.blog-card') as NodeListOf<HTMLElement>;
+  function filterCards(category) {
+    activeFilter = category;
+    var visibleCount = 0;
 
-    if (filterBar && filterLabel) {
+    filterBtns.forEach(function(btn) {
+      btn.classList.toggle('active', btn.dataset.filter === category);
+    });
+
+    if (category !== 'all') {
       filterBar.style.display = 'flex';
-      filterLabel.textContent = `Showing: ${categoryLabels[category] || category}`;
+      filterLabel.textContent = 'Showing: ' + (categoryLabels[category] || category);
+    } else {
+      filterBar.style.display = 'none';
     }
 
-    let visibleCount = 0;
-    cards.forEach((card) => {
-      if (card.dataset.category !== category) {
-        card.style.display = 'none';
-      } else {
+    cards.forEach(function(card) {
+      if (category === 'all' || card.dataset.category === category) {
+        card.style.display = '';
         visibleCount++;
+      } else {
+        card.style.display = 'none';
       }
     });
 
-    if (visibleCount === 0 && noPosts) {
-      noPosts.style.display = 'block';
+    noPosts.style.display = visibleCount === 0 ? 'block' : 'none';
+
+    var url = new URL(window.location.href);
+    if (category === 'all') {
+      url.searchParams.delete('category');
+    } else {
+      url.searchParams.set('category', category);
     }
+    window.history.replaceState({}, '', url.toString());
+  }
+
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      searchInput.value = '';
+      searchResults.style.display = 'none';
+      blogGrid.style.display = '';
+      filterCards(btn.dataset.filter || 'all');
+    });
+  });
+
+  var clearFilter = document.querySelector('.clear-filter');
+  if (clearFilter) {
+    clearFilter.addEventListener('click', function(e) {
+      e.preventDefault();
+      searchInput.value = '';
+      searchResults.style.display = 'none';
+      blogGrid.style.display = '';
+      filterCards('all');
+    });
+  }
+
+  var params = new URLSearchParams(window.location.search);
+  var initialCategory = params.get('category');
+  if (initialCategory) {
+    filterCards(initialCategory);
+  }
+
+  var pagefind = null;
+
+  async function loadPagefind() {
+    if (!pagefind) {
+      try {
+        pagefind = await import('/pagefind/pagefind.js');
+        await pagefind.init();
+      } catch (e) {
+        return null;
+      }
+    }
+    return pagefind;
+  }
+
+  var searchTimeout;
+
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      clearTimeout(searchTimeout);
+      var query = searchInput.value.trim();
+
+      if (!query) {
+        searchResults.style.display = 'none';
+        blogGrid.style.display = '';
+        noPosts.style.display = 'none';
+        return;
+      }
+
+      searchTimeout = setTimeout(async function() {
+        var pf = await loadPagefind();
+        if (!pf) return;
+
+        var search = await pf.search(query);
+        var results = await Promise.all(
+          search.results.slice(0, 12).map(function(r) { return r.data(); })
+        );
+
+        var blogResults = results.filter(function(r) {
+          return r.url.startsWith('/blog/') && r.url !== '/blog/';
+        });
+
+        if (blogResults.length > 0) {
+          blogGrid.style.display = 'none';
+          filterBar.style.display = 'none';
+          noPosts.style.display = 'none';
+          searchResults.style.display = 'block';
+          searchResults.innerHTML =
+            '<div class="search-results-header">' +
+              '<span>' + blogResults.length + ' result' + (blogResults.length !== 1 ? 's' : '') + ' for "' + query + '"</span>' +
+            '</div>' +
+            '<div class="blog-grid">' +
+              blogResults.map(function(r) {
+                var title = r.meta.title ? r.meta.title.replace(' | Solo Mom Intentional', '') : 'Untitled';
+                return '<a href="' + r.url + '" class="blog-card">' +
+                  '<div class="blog-card-content" style="padding-top: 24px;">' +
+                    '<h2 class="blog-card-title">' + title + '</h2>' +
+                    '<p class="blog-card-excerpt">' + r.excerpt + '</p>' +
+                  '</div>' +
+                '</a>';
+              }).join('') +
+            '</div>';
+        } else {
+          blogGrid.style.display = 'none';
+          filterBar.style.display = 'none';
+          searchResults.style.display = 'block';
+          searchResults.innerHTML =
+            '<div class="no-posts">' +
+              '<p>No results found for "' + query + '".</p>' +
+            '</div>';
+        }
+      }, 300);
+    });
   }
 </script>
