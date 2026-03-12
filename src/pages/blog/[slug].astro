@@ -41,7 +41,9 @@ const htmlContent = await marked(contentWithoutTitle);
 const shareUrl = `https://solomomintentional.com/blog/${post.slug}`;
 const encodedUrl = encodeURIComponent(shareUrl);
 const encodedTitle = encodeURIComponent(post.title);
-const ogImage = post.image ? `https://solomomintentional.com${post.image}` : undefined;
+const ogImage = post.image
+  ? `https://solomomintentional.com/og/${post.slug}.jpg`
+  : undefined;
 ---
 
 <BaseLayout

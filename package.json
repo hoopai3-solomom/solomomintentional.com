@@ -9,12 +9,13 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^5.0.0",
-    "@astrojs/sitemap": "^3.0.0",
     "@astrojs/rss": "^4.0.0",
+    "@astrojs/sitemap": "^3.0.0",
+    "astro": "^5.0.0",
     "marked": "^15.0.0"
   },
   "devDependencies": {
+    "canvas": "^3.2.1",
     "pagefind": "^1.0.0",
     "typescript": "~5.9.3"
   }
